@@ -1,0 +1,4 @@
+fastapi==0.95.2
+torch==1.13.1
+torchvision==0.14.1
+uvicorn==0.22.0
