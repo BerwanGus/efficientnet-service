@@ -1,3 +1,4 @@
+import os
 import torch
 import torchvision
 import torchvision.transforms as transforms
@@ -5,8 +6,8 @@ import torch.nn as nn
 from datetime import datetime
 from torch.utils.data import DataLoader
 
-from ...efficientnet_model import EfficientNet
-from ...PARAMS import PARAMS
+from efficientnet_model import EfficientNet
+from PARAMS import params
 
 
 class DeviceDataLoader():
@@ -14,21 +15,38 @@ class DeviceDataLoader():
         self.dl = dl
         self.device = device
 
+    def __batch_to_device(self, batch):
+        if isinstance(batch, (list, tuple)):
+            return [data.to(self.device) for data in batch]
+        else:
+            return batch.to(self.device)
+
     def __iter__(self):
         for batch in self.dl:
-            if isinstance(batch, (list, tuple)):
-                yield [data.to(self.device) for data in batch]
-            else:
-                yield batch.to(self.device)
+            yield self.__batch_to_device(batch)
+
+    def __getitem__(self, index):
+        for i, batch in enumerate(self.dl):
+            if i == index:
+                return self.__batch_to_device(batch)
+                
+        return torch.tensor(self.dl.dataset[index]).to(self.device)
 
     def __len__(self):
         return len(self.dl)
 
 
 def load_dummy_data():
+    device = "cuda:0" if torch.cuda.is_available() else "cpu"
     transform = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize((0.5,), (0.5,))])
+    
+    training_set = torchvision.datasets.CIFAR10(os.getenv('DATA_PATH'), train=True, transform=transform,
+                                                download=True)
+    validation_set = torchvision.datasets.CIFAR10(os.getenv('DATA_PATH'), train=False, transform=transform,
+                                                download=True)
+
     training_loader = DataLoader(training_set, batch_size=4, shuffle=True)
     validation_loader = DataLoader(validation_set, batch_size=4, shuffle=True)
     
@@ -69,17 +87,16 @@ def train_step(data_loader, model, optimizer, loss_fn):
     return last_loss
 
 
-def train_model(model):
+def train_model(model, epochs):
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=0.003)
 
-    training_loader, validation_loader, classes = load_dummy_data()
+    training_loader, validation_loader, classes = load_dummy_data(model.de)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
     best_vloss = 1_000_000.
 
-    epochs = 5
     for epoch in range(epochs):
         print("Epoch: {}".format(epoch + 1))
 
@@ -108,10 +125,10 @@ def train_model(model):
 
 if __name__ == '__main__':
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
-    version = "b0"
+    version = os.getenv('UNET_VERSION')
     num_classes = 10
     model = EfficientNet(version, num_classes).to(device)
-    train_model(model)
+    train_model(model, epochs=5)
 
     # testing
     # _, vdataloader, _ = load_dummy_data()

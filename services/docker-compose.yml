@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: ./01_api/
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./01_api/.env
+    volumes:
+      - ./01_api/app/data:/app/data

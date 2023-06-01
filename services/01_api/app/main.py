@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
-from ....efficientnet_model import EfficientNet
+from toolbox.efficientnet_model import EfficientNet
 
 import torch
 
 app = FastAPI()
 
-@app.get("/check_service")
+@app.get("/healthcheck")
 def check_service():
     return {"response": "I am alive!"}
 
