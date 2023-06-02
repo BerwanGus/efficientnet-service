@@ -1,26 +1,25 @@
+import torch
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from toolbox.efficientnet_model import EfficientNet
+from toolbox.prediction import predict
 
-import torch
 
 app = FastAPI()
 
 @app.get("/healthcheck")
-def check_service():
+def get_check_service():
     return {"response": "I am alive!"}
 
-@app.get("/get_model")
-def get_model(version: str = 'b0'):
-    device = "cuda:0" if torch.cuda.is_available() else "cpu"
-    num_classes = 10
+@app.get("/predict")
+def get_predict():
+    rand_index = torch.randint(low=0, high=int(10000/4), size=(1,))
+    probs, decoded_preds, decoded_labels = predict(rand_index)
 
-    model = EfficientNet(version, num_classes).to(device)
-    return JSONResponse({'model': model}, 200)
+    results = {}
+    for i, (prob, dpred, dlabel) in enumerate(zip(probs, decoded_preds, decoded_labels)):
+        id = f"batch_{rand_index}_image{i}"
+        results[id] = (dpred, float(torch.max(prob)*100), dlabel)
+        print("\tpredicted: {} ({:.2f}%); true: {}".format(*results[id]))
     
-@app.get("/get_model/{model_path}")
-def load_model():
-    device = "cuda:0" if torch.cuda.is_available() else "cpu"
-    
-    model = torch.load(model, map_location=torch.device(device))
-    return JSONResponse({'model': model}, 200)
+    return JSONResponse({"predictions": results}, 200)

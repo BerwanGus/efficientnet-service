@@ -1,7 +1,7 @@
 import os
 import torch
-from efficientnet_model import EfficientNet
-from train_model import load_dummy_data
+from toolbox.efficientnet_model import EfficientNet
+from toolbox.train_model import load_dummy_data
 
 
 def load_unet(version, path):
@@ -23,15 +23,14 @@ def decode_classes(preds, classes):
         return classes[int(preds)]
 
 
-def predict():
+def predict(batch_index):
     # model = load_unet(os.getenv('UNET_VERSION'), os.getenv('MODEL_PATH'))
     model = load_unet(os.getenv("UNET_VERSION"), os.getenv("MODEL_PATH"))
     model.training = False
     
     training_loader, validation_loader, classes = load_dummy_data()
 
-    rand_index = torch.randint(low=0, high=len(validation_loader), size=(1,))
-    batch = validation_loader[rand_index]
+    batch = validation_loader[batch_index]
     inputs, labels = batch
     logits = model(inputs)
     probs = torch.nn.Softmax(1)(logits)
@@ -40,11 +39,7 @@ def predict():
     decoded_preds = decode_classes(preds, classes)
     decoded_labels = decode_classes(labels, classes)
 
-    print("batch: {}".format(int(rand_index)))
-    for prob, dpred, dlabel in zip(probs, decoded_preds, decoded_labels):
-        print("\tpredicted: {} ({:.2f}%); true: {}".format(dpred,
-                                                           torch.max(prob) * 100,
-                                                           dlabel))
+    return (probs, decoded_preds, decoded_labels)
         
 
 if __name__=='__main__':

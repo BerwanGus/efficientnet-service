@@ -6,8 +6,8 @@ import torch.nn as nn
 from datetime import datetime
 from torch.utils.data import DataLoader
 
-from efficientnet_model import EfficientNet
-from PARAMS import params
+from toolbox.efficientnet_model import EfficientNet
+from toolbox.PARAMS import params
 
 
 class DeviceDataLoader():
@@ -28,9 +28,8 @@ class DeviceDataLoader():
     def __getitem__(self, index):
         for i, batch in enumerate(self.dl):
             if i == index:
-                return self.__batch_to_device(batch)
-                
-        return torch.tensor(self.dl.dataset[index]).to(self.device)
+                return self.__batch_to_device(batch)          
+        raise IndexError("Index out of range")
 
     def __len__(self):
         return len(self.dl)
