@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html class="  no-touch js svg" lang="pt-br"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1">
+           
+       
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://blog.nvidia.com.br/xmlrpc.php">
+
+    <script async="" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/a" data-sumo-site-id="a25ba807c1219a7b6f9259b59646746d7be6f9c23edf61f197d734478c8be3aa" data-sumo-platform="wordpress"></script><script>
+		<!--
+		// Check for js support (replace no-js class on html)
+		document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '') + ' js';
+		// Check for SVG support (replace no-svg class on html)
+		if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect) {
+			document.documentElement.className = document.documentElement.className.replace(/\bno-svg\b/, '') + ' svg';
+		}
+		// Check if touch-capable device.
+		if ('ontouchstart' in window || navigator.maxTouchPoints) {
+			document.documentElement.className = document.documentElement.className.replace(/\bno-touch\b/, '') + ' touch';
+		}
+		// -->
+    </script>
+	
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="alternate" hreflang="pt-br" href="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/">
+<link rel="alternate" hreflang="x-default" href="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/">
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>O que é MLOps? - Blog oficial NVIDIA Brasil</title>
+	<meta name="description" content="O que é MLOps? As operações de machine learning são práticas recomendadas para executar AI com sucesso. Saiba sobre DLOps, AIOps e ModelOps também.">
+	<link rel="canonical" href="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="O que é MLOps? - Blog oficial NVIDIA Brasil">
+	<meta property="og:description" content="O que é MLOps? As operações de machine learning são práticas recomendadas para executar AI com sucesso. Saiba sobre DLOps, AIOps e ModelOps também.">
+	<meta property="og:url" content="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/">
+	<meta property="og:site_name" content="Blog oficial NVIDIA Brasil">
+	<meta property="article:publisher" content="https://www.facebook.com/NVIDIABrasil/">
+	<meta property="article:published_time" content="2020-09-08T11:00:30+00:00">
+	<meta property="article:modified_time" content="2020-09-03T19:23:25+00:00">
+	<meta property="og:image" content="https://blog.nvidia.com.br/wp-content/uploads/sites/12/2020/09/1-MLOps-NVIDIA-invert-final.jpg">
+	<meta property="og:image:width" content="1280">
+	<meta property="og:image:height" content="679">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="Rick Merritt">
+	<meta name="twitter:label1" content="Escrito por">
+	<meta name="twitter:data1" content="Rick Merritt">
+	<meta name="twitter:label2" content="Est. tempo de leitura">
+	<meta name="twitter:data2" content="11 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/","url":"https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/","name":"O que é MLOps? - Blog oficial NVIDIA Brasil","isPartOf":{"@id":"https://blog.nvidia.com.br/#website"},"primaryImageOfPage":{"@id":"https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/#primaryimage"},"image":{"@id":"https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/#primaryimage"},"thumbnailUrl":"https://blog.nvidia.com.br/wp-content/uploads/sites/12/2020/09/1-MLOps-NVIDIA-invert-final.jpg","datePublished":"2020-09-08T11:00:30+00:00","dateModified":"2020-09-03T19:23:25+00:00","author":{"@id":"https://blog.nvidia.com.br/#/schema/person/175fa65fee5d61a7eec9c1672beea477"},"description":"O que é MLOps? As operações de machine learning são práticas recomendadas para executar AI com sucesso. Saiba sobre DLOps, AIOps e ModelOps também.","breadcrumb":{"@id":"https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/#breadcrumb"},"inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/"]}]},{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/#primaryimage","url":"https://blog.nvidia.com.br/wp-content/uploads/sites/12/2020/09/1-MLOps-NVIDIA-invert-final.jpg","contentUrl":"https://blog.nvidia.com.br/wp-content/uploads/sites/12/2020/09/1-MLOps-NVIDIA-invert-final.jpg","width":1280,"height":679},{"@type":"BreadcrumbList","@id":"https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://blog.nvidia.com.br/"},{"@type":"ListItem","position":2,"name":"O que é MLOps?"}]},{"@type":"WebSite","@id":"https://blog.nvidia.com.br/#website","url":"https://blog.nvidia.com.br/","name":"Blog oficial NVIDIA Brasil","description":"Blog oficial da NVIDIA Brasil","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://blog.nvidia.com.br/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"pt-BR"},{"@type":"Person","@id":"https://blog.nvidia.com.br/#/schema/person/175fa65fee5d61a7eec9c1672beea477","name":"Rick Merritt","image":{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://blog.nvidia.com.br/#/schema/person/image/470d3993382b1ef48ef6983766bcd885","url":"https://blogs.nvidia.com/wp-content/uploads/2022/08/rick-merritt-96x96.jpg","contentUrl":"https://blogs.nvidia.com/wp-content/uploads/2022/08/rick-merritt-96x96.jpg","caption":"Rick Merritt"},"description":"Rick Merritt is a staff writer at NVIDIA. Previously, he worked as a reporter and editor at \"EE Times\" for 28 years and served as managing editor of \"Asian Computer Monthly\" based in Hong Kong.","url":"https://blog.nvidia.com.br/author/rickmerritt/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="https://nvidiablog.disqus.com/">
+<link rel="alternate" type="application/rss+xml" title="Feed de Blog oficial NVIDIA Brasil »" href="https://blog.nvidia.com.br/feed/">
+<link rel="alternate" type="application/rss+xml" title="Blog oficial NVIDIA Brasil »  Feed de comentários" href="https://blog.nvidia.com.br/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Blog oficial NVIDIA Brasil » O que é MLOps?  Feed de comentários" href="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blog.nvidia.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/wp-emoji-release.min.js" type="text/javascript" defer="defer"></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/style.min_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/classic-themes.min.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="wpml-blocks-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpml-legacy-dropdown-0-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/style.min.css" type="text/css" media="all">
+<style id="wpml-legacy-dropdown-0-inline-css" type="text/css">
+.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#cdcdcd;}.wpml-ls-statics-shortcode_actions a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions a:hover,.wpml-ls-statics-shortcode_actions a:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+</style>
+<link rel="stylesheet" id="yith-infs-style-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="nvb5-style-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/styles_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="print-style-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/print.css" type="text/css" media="print">
+<link rel="stylesheet" id="bxslider-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery.bxslider.min.css" type="text/css" media="screen">
+<link rel="stylesheet" id="tablepress-default-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/tablepress-combined.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="bsfrt_frontend-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/bsfrt-frontend-css.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="colorbox-css" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/colorbox.css" type="text/css" media="all">
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/script.min.js" id="wpml-legacy-dropdown-0-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/nv-gtm.js" id="nv-gtm-js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.nvidia.com.br/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.nvidia.com.br/wp-includes/wlwmanifest.xml">
+<link rel="shortlink" href="https://blog.nvidia.com.br/?p=1872">
+<link rel="alternate" type="application/json+oembed" href="https://blog.nvidia.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.nvidia.com.br%2F2020%2F09%2F08%2Fo-que-e-mlops%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://blog.nvidia.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.nvidia.com.br%2F2020%2F09%2F08%2Fo-que-e-mlops%2F&amp;format=xml">
+<meta name="generator" content="WPML ver:4.6.3 stt:1,44;">
+<link type="text/css" rel="stylesheet" href="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/simple-pull-quote.css">
+	<meta name="google-site-verification" content="fRN6Tokx0As6AGYPd4zjMBgITWR2dvXjN6Zb3gojo-Y">
+	
+<style type="text/css">
+.entry-content .bsf-rt-reading-time{
+background: #eeeeee;
+
+color: #333333;
+
+font-size: 15px;
+
+margin-top: 
+		1px;
+
+margin-right: 
+		1px;
+
+margin-bottom: 
+		1px;
+
+margin-left: 
+		1px;
+
+padding-top: 
+		0.5em;
+
+padding-right: 
+		0.7em;
+
+padding-bottom: 
+		0.5em;
+
+padding-left: 
+		0.7em;
+
+width: max-content;
+
+display: block;
+
+min-width: 100px;
+
+}
+
+</style>
+		<script src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/launch-4bc07f1e0b0b.min.js"></script><script src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/EX616f86059fb646129ed2f5e3c897a3b8-libraryCode_source.min.js" async=""></script><script>_satellite["_runScript1"](function(event, target, Promise) {
+var inTime=(new Date()).getTime();
+return window.inTime=inTime;
+});</script><script>_satellite["_runScript2"](function(event, target, Promise) {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+    {
+        (function () {
+
+		  if ( typeof window.CustomEvent === "function" ) return false;
+
+		  function CustomEvent ( event, params ) {
+			params = params || { bubbles: false, cancelable: false, detail: null };
+			var evt = document.createEvent( 'CustomEvent' );
+			evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+			return evt;
+		   }
+
+		  window.CustomEvent = CustomEvent;
+		})();
+      console.log('IE');
+    }else{console.log('other version');}
+});</script><script>
+/* function dtm_track
+ *   @param type -- Required. The type of call. Defaults to "view".
+ *   @param obj -- Optional. An object of data elements for mapping to a tag.
+ *
+ *   @description This function is used for tracking some event dynamically.
+ *     This is used in conjunction with a special process in direct call
+ *     rules and js object data elements.
+ *
+ *     -- The <obj> param --
+ *     All data elements passed into the <obj> param of this function should
+ *     be created in dtm as js objects named "dtm_layer.<element_name>".
+ *     Each possible item in the object should be created as a data element
+ *     and then mapped in the associated direct call rule.
+ *
+ *     -- The <type> param --
+ *     All direct call rules will have the string in the format of <type>.
+ *     So, you might have "view". In SiteCatalyst, for example, you would
+ *     put this string and then init an s.t() call because it is a "view".
+ *     
+ *     -- Debugging -- 
+ *     If you'd like to view the output of these calls as they happen, enable
+ *     the debug cookie in the console with the following:
+ *         document.cookie="dtm_debug=true";
+ *
+ *     -- Additional Info --
+ *     This code also will initialize a page with an empty dtm_layer object if
+ *     one isn't defined already. In addition, a global cloning function is
+ *     created called "dtm_clone". It will clone the following js types: string,
+ *     object, boolean, array, date, number, function. It will NOT copy anything
+ *     that has prototype methods defined. It will also not copy anything that
+ *     is cylic or recursive in nature. If done, a stack overflow error will
+ *     result. This method can be called on any variable like so:
+ *         myClonedVar = dtm_clone(myOldVar);
+ */
+
+window.dtm_clone = function(obj) {
+  if (null == obj || "object" != typeof obj)
+    return obj;
+
+  if (obj instanceof Date) {
+    var copy = new Date();
+    copy.setTime(obj.getTime());
+    return copy;
+  }
+
+  if (obj instanceof Array) {
+    var copy = [];
+    for (var i = 0, len = obj.length; i < len; i++) {
+      copy[i] = dtm_clone(obj[i]);
+    }
+    return copy;
+  }
+
+  if (obj instanceof Object) {
+    var copy = {};
+    for (var attr in obj) {
+      if (obj.hasOwnProperty(attr)) copy[attr] = dtm_clone(obj[attr]);
+    }
+    return copy;
+  }
+
+  if (typeof console != "undefined" && console.log)
+    console.log('clone: type "'+(typeof obj)+'" not supported')
+}
+ 
+window.dtm_layer = window.dtm_layer || {};
+window.dtm_track = function(type,obj) {
+  try {
+    var hasTracked = "";
+    if (typeof _satellite == "undefined") hasTracked = "NOT ";
+    if (typeof type == "undefined" || type == null || !type) type = "view";
+  
+    var temp = window.dtm_clone(window.dtm_layer);
+    window.dtm_layer = obj || {};
+  
+    if (typeof console != "undefined" && console.log
+        && typeof _satellite.readCookie('dtm_debug') != "undefined"
+        && (_satellite.readCookie('dtm_debug') == "true"
+            || _satellite.readCookie('dtm_debug') == true)) {
+      console.log("dtm " + hasTracked + "tracked '" + type + "'", obj);
+    }
+  
+    if (hasTracked != "NOT ")
+      _satellite.track(type);
+  
+    window.dtm_layer = window.dtm_clone(temp);
+    delete temp;
+  } catch (e) {
+    if(typeof console != "undefined" && console.log)
+        console.log("dtm_track error. Message: ",e.getMessage()," Passed obj: ",obj);
+  }
+  return true;
+};
+</script><script async="" type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/count.js"></script><script type="text/javascript" async="" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/embed_002.js"></script><script type="text/javascript" async="" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/munchkin.js"></script><script src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/RCa1a0c359afe145a09dd85864963d6126-source.min.js" async=""></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><script type="text/javascript" async="" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/embed.js"></script><script async="" id="dsq_recs_scr" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/recommendations.js"></script><script src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/RCee9fb2620b064a95917926acb8ef05e6-source.min.js" async=""></script><script src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/RC880b7c453ff04d8ba6992d7d9d9b9808-source.min.js" async=""></script><script src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/RC6211e5a9ae6d4d798231e0b96aadda81-source.min.js" async=""></script><script type="text/javascript" async="" id="bizible-settings" data-account="nvidia" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/bizible.js"></script></head>
+
+<body class="post-template-default single single-post postid-1872 single-format-standard group-blog non-aggregation-view site-lang-pt-br">
+
+<div id="page" class="hfeed site">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    <header id="masthead" class="site-header" role="banner">
+        <div class="inner for-masthead">
+            <div class="site-branding">
+				                                <a href="https://www.nvidia.com/" rel="home">
+									                                    <div class="site-title">
+                                        <svg id="logo" enable-background="new 0 0 974.7 179.7" version="1.1" viewBox="0 0 974.7 179.7" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" width="110" height="44"><title>
+                                                Artificial Intelligence 
+Computing Leadership from NVIDIA                                        
+        </title>
+                                            <path d="m962.1 144.1v-2.7h1.7c0.9 0 2.2 0.1 2.2 1.2s-0.7 1.5-1.8 1.5h-2.1m0 1.9h1.2l2.7 4.7h2.9l-3-4.9c1.5 0.1 2.7-1 2.8-2.5v-0.4c0-2.6-1.8-3.4-4.8-3.4h-4.3v11.2h2.5v-4.7m12.6-0.9c0-6.6-5.1-10.4-10.8-10.4s-10.8 3.8-10.8 10.4 5.1 10.4 10.8 10.4 10.8-3.8 10.8-10.4m-3.2 0c0.2 4.2-3.1 7.8-7.3 8h-0.3c-4.4 0.2-8.1-3.3-8.3-7.7s3.3-8.1 7.7-8.3 8.1 3.3 8.3 7.7c-0.1 0.1-0.1 0.2-0.1 0.3z"></path>
+                                            <path d="m578.2 34v118h33.3v-118h-33.3zm-262-0.2v118.1h33.6v-91.7l26.2 0.1c8.6 0 14.6 2.1 18.7 6.5 5.3 5.6 7.4 14.7 7.4 31.2v53.9h32.6v-65.2c0-46.6-29.7-52.9-58.7-52.9h-59.8zm315.7 0.2v118h54c28.8 0 38.2-4.8 48.3-15.5 7.2-7.5 11.8-24.1 11.8-42.2 0-16.6-3.9-31.4-10.8-40.6-12.2-16.5-30-19.7-56.6-19.7h-46.7zm33 25.6h14.3c20.8 0 34.2 9.3 34.2 33.5s-13.4 33.6-34.2 33.6h-14.3v-67.1zm-134.7-25.6l-27.8 93.5-26.6-93.5h-36l38 118h48l38.4-118h-34zm231.4 118h33.3v-118h-33.3v118zm93.4-118l-46.5 117.9h32.8l7.4-20.9h55l7 20.8h35.7l-46.9-117.8h-44.5zm21.6 21.5l20.2 55.2h-41l20.8-55.2z"></path>
+                                            <path fill="#76B900" d="m101.3 53.6v-16.2c1.6-0.1 3.2-0.2 4.8-0.2 44.4-1.4 73.5 38.2 73.5 38.2s-31.4 43.6-65.1 43.6c-4.5 0-8.9-0.7-13.1-2.1v-49.2c17.3 2.1 20.8 9.7 31.1 27l23.1-19.4s-16.9-22.1-45.3-22.1c-3-0.1-6 0.1-9 0.4m0-53.6v24.2l4.8-0.3c61.7-2.1 102 50.6 102 50.6s-46.2 56.2-94.3 56.2c-4.2 0-8.3-0.4-12.4-1.1v15c3.4 0.4 6.9 0.7 10.3 0.7 44.8 0 77.2-22.9 108.6-49.9 5.2 4.2 26.5 14.3 30.9 18.7-29.8 25-99.3 45.1-138.7 45.1-3.8 0-7.4-0.2-11-0.6v21.1h170.2v-179.7h-170.4zm0 116.9v12.8c-41.4-7.4-52.9-50.5-52.9-50.5s19.9-22 52.9-25.6v14h-0.1c-17.3-2.1-30.9 14.1-30.9 14.1s7.7 27.3 31 35.2m-73.5-39.5s24.5-36.2 73.6-40v-13.2c-54.4 4.4-101.4 50.4-101.4 50.4s26.6 77 101.3 84v-14c-54.8-6.8-73.5-67.2-73.5-67.2z"></path></svg>
+                                    </div>
+                                </a>
+            </div><!-- .site-branding -->
+
+            <ul class="secondary-menu-socials top_search">
+                <li class="search-item">
+					<form role="search" method="get" class="search-form" action="https://blog.nvidia.com.br/">
+	<div class="form-item for-search">
+		<label>
+			<span class="screen-reader-text">Pesquisar por:</span>
+			<input type="search" class="search-field" placeholder="Pesquisar" name="s" title="Pesquisar por:">
+		</label>
+	</div>
+	<div class="form-item for-submit">
+		<input type="submit" class="search-submit" value="Pesquisar">
+		<button type="submit" class="search-submit-button">	<span class="icon icon-search"></span>
+	</button>
+	</div>
+<input type="hidden" name="lang" value="pt-br"></form>
+                    <a href="https://blog.nvidia.com.br/?s=" class="search-icon-link js-search-item-link">
+                        <span class="hidden">Toggle Search</span>
+                    </a>
+                </li><!-- .search-item -->
+            </ul><!-- .secondary-menu-socials -->
+
+            <div class="mobile-menu-toggle-wrapper to-open">
+                <button class="mobile-menu-toggle">	<span class="icon icon-menu"></span>
+	</button>
+            </div>
+
+            <nav id="site-navigation" class="primary-menu-slot main-navigation" role="navigation">
+                <div class="main-navigation-inner">
+                    <div class="mobile-menu-toggle-wrapper to-close">
+                        <button class="mobile-menu-toggle">	<span class="icon icon-x"></span>
+	</button>
+                    </div>
+					
+					
+                    <div class="nvidia-site-search for-mobile">
+
+                        <form role="search" method="get" class="search-form" action="https://blog.nvidia.com.br/">
+                            <div class="form-item for-search">
+                                <label>
+                                    <span class="screen-reader-text">Search for:</span>
+                                    <input type="search" class="search-field" placeholder="Search" name="s" title="Search for:">
+                                </label>
+                            </div>
+                            <div class="form-item for-submit">
+                                <button type="submit" class="search-submit">	<span class="icon icon-search"></span>
+	</button>
+                            </div>
+                            <input type="hidden" name="lang" value="en">
+                        </form>
+
+                    </div>
+
+                    <div class="social-links for-mobile">	<div class="mobile-menu-social-links">
+		<ul class="mobile-menu-social-links-list">
+							<li>
+					<a href="https://twitter.com/nvidiabrasil" class="nvb4-social-connect-link for-twitter" target="_blank">	<span class="icon icon-twitter"></span>
+	</a>				</li>
+											<li>
+					<a href="https://www.facebook.com/nvidiabrasil/" class="nvb4-social-connect-link for-facebook" target="_blank">	<span class="icon icon-facebook"></span>
+	</a>				</li>
+											<li>
+					<a href="https://www.linkedin.com/showcase/nvidiabrasil/" class="nvb4-social-connect-link for-linkedin" target="_blank">	<span class="icon icon-linkedin"></span>
+	</a>				</li>
+									</ul>
+	</div>
+	                    </div>
+
+                    <div class="mobile-menu-footer for-mobile">
+							<div class="site-info">
+		<ul class="site-info-list">
+			<li>
+				<a href="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/">Política de Privacidade</a>
+			</li>
+							<li>
+					<a href="https://www.nvidia.com/en-us/privacy-center/">Manage My Privacy</a>
+				</li>
+										<li>
+					<a href="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/">Legal</a>
+				</li>
+										<li>
+					<a href="https://www.nvidia.com/en-us/about-nvidia/accessibility/">Accessibility</a>
+				</li>
+										<li>
+					<a href="https://www.nvidia.com/en-us/product-security/">Product Security</a>
+				</li>
+										<li>
+					<a href="https://www.nvidia.com/en-us/contact/">Contact</a>
+				</li>
+					</ul>
+		<div class="copyright">
+			Copyright © 2023 NVIDIA Corporation 		</div>
+	</div>
+	                    </div>
+
+                </div><!-- /.main-navigation-inner -->
+            </nav><!-- #site-navigation -->
+        </div><!-- /.inner.for-masthead -->
+    </header><!-- #masthead -->
+		<div class="secondary-menu-slot-wrapper">
+	<nav class="secondary-menu-slot sticky-active" role="navigation">
+		<div class="secondary-menu-slot-inner inner for-masthead">
+			<div class="menu-secundario-container"><ul id="secondary-menu" class="menu"><li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-94"><a href="https://blog.nvidia.com.br/">Home</a></li>
+<li id="menu-item-1716" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1716"><a href="https://blog.nvidia.com.br/category/deep-learning/">AI</a></li>
+<li id="menu-item-1847" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1847"><a href="https://blog.nvidia.com.br/category/data-center/">Data Center</a></li>
+<li id="menu-item-2861" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2861"><a href="https://blog.nvidia.com.br/category/gaming/">Gaming</a></li>
+<li id="menu-item-1719" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1719"><a href="https://blog.nvidia.com.br/category/graficos-profissionais/">Gráficos Profissionais</a></li>
+<li id="menu-item-1819" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1819"><a href="https://blog.nvidia.com.br/category/maquinas-autonomas/">Máquinas Autônomas</a></li>
+<li id="menu-item-2190" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2190"><a href="https://blog.nvidia.com.br/category/area-da-saude/">Área da Saúde</a></li>
+<li id="menu-item-3315" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-3315"><a href="https://blog.nvidia.com.br/tag/cases-de-clientes/">Casos de Uso</a></li>
+<li id="menu-item-2794" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2794"><a target="_blank" rel="noopener" href="https://blog.nvidia.com.br/vem-ai-podcast/">Podcast</a></li>
+</ul></div>		</div><!-- /.secondary-menu-slot-inner -->
+	</nav>
+	</div>    <div id="content" class="site-content">
+        <div class="inner for-content">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+			<div class="cf-posts-with-overrides">
+		
+
+<article id="post-1872" class="post-with-sidebar post-1872 post type-post status-publish format-standard has-post-thumbnail hentry category-data-center category-deep-learning tag-ciencia-de-dados tag-inteligencia-artificial tag-machine-learning tag-ngc tag-nvidia-dgx tag-nvidia-dgx-superpod tag-nvidia-drive loop-item-1 for-pagenum-1" data-url="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/" data-identifier="1872 https://blog.nvidia.com.br/?p=1872" data-title="O que é MLOps?">
+
+	<header class="entry-header">
+		<div class="inner3">
+			<!-- TITLE -->
+			<h1>O que é MLOps?</h1>
+					<div class="nvb4-subtitle">
+			<div class="nvb4-subtitle-inner">
+				Operações de machine learning, MLOps (Machine Learning Operations), 
+são as melhores práticas para as empresas executarem AI com sucesso com a
+ ajuda de uma ampla gama de produtos de software e serviços em cloud.			</div>
+		</div>
+				<div class="author_meta">
+			<span class="entry-date">8 de setembro de 2020</span> <span class="meta-sep">por</span> <span class="author vcard"><a class="url fn n" href="https://blog.nvidia.com.br/author/rickmerritt/" title="Ver todos os posts por Rick Merritt">Rick Merritt</a></span>			</div>
+		</div><!-- /inner3 -->
+
+		<!-- FEATURED IMG/VIDEO -->
+		
+			<div class="entry-title img-bg js-lazy-load-image orientation-landscape with-img" data-img-min="https://blog.nvidia.com.br/wp-content/uploads/sites/12/2020/09/1-MLOps-NVIDIA-invert-final-406x215.jpg" data-img-max="https://blog.nvidia.com.br/wp-content/uploads/sites/12/2020/09/1-MLOps-NVIDIA-invert-final.jpg" style="background-image:url(https://blog.nvidia.com.br/wp-content/uploads/sites/12/2020/09/1-MLOps-NVIDIA-invert-final.jpg)">
+			</div>
+		
+	</header><!-- .entry-header -->
+
+	<!-- META -->
+	<div class="entry-meta-social">
+		<div class="share-count-section">
+			<span class="share-text">
+					<span class="icon icon-share"></span>
+					Compartilhe			</span>
+		</div>
+		<ul class="entry-meta-social-links-list">
+			<li><a href="https://twitter.com/intent/tweet?text=O%20que%20%C3%A9%20MLOps?%20https%3A%2F%2Fblog.nvidia.com.br%2F2020%2F09%2F08%2Fo-que-e-mlops%2F" class="nvb4-social-share-link for-twitter" target="_blank">	<span class="icon icon-twitter"></span>
+	</a></li><li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.nvidia.com.br%2F2020%2F09%2F08%2Fo-que-e-mlops%2F" class="nvb4-social-share-link for-facebook" target="_blank">	<span class="icon icon-facebook"></span>
+	</a></li><li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.nvidia.com.br%2F2020%2F09%2F08%2Fo-que-e-mlops%2F&amp;title=O+que+%C3%A9+MLOps%3F+-+Blog+oficial+NVIDIA+Brasil" class="nvb4-social-share-link for-linkedin" target="_blank">	<span class="icon icon-linkedin"></span>
+	</a></li><li><a href="#ea-share-count-email" class="ea-share-count-button style- ea-share-no-count email" data-postid="1872" data-nonce="7b9b0beef5" "=""><span class="ea-share-count-icon-label"><i class="ea-share-count-icon easc-envelope"></i><span class="ea-share-count-label">Email</span></span><span class="ea-share-count">0</span></a></li>		</ul>
+	</div><!-- .entry-meta -->
+
+	<div class="entry-content">
+		<span class="bsf-rt-reading-time"><span class="bsf-rt-display-label" prefix="Reading Time"></span> <span class="bsf-rt-display-time" reading_time="8"></span> <span class="bsf-rt-display-postfix" postfix="mins"></span></span><div id="bsf_rt_marker"><p>MLOps
+ pode parecer o nome de um monstro peludo de um olho só, mas na verdade é
+ uma sigla que significa sucesso na AI empresarial.</p>
+<p>Uma abreviação para operações de machine learning, MLOps (Machine 
+Learning Operations) é um conjunto de práticas recomendadas para que as 
+empresas executem a AI com sucesso.</p>
+<p>MLOps é um campo relativamente novo, pois o uso comercial da AI é bastante recente.</p>
+<h2><b>MLOps: Priorizando a AI Corporativa</b></h2>
+<p>O <a href="https://blogs.nvidia.com/blog/2016/01/12/accelerating-ai-artificial-intelligence-gpus/" target="_blank" rel="noopener noreferrer">Big Bang da AI</a>
+ foi em 2012 quando um pesquisador ganhou um concurso de reconhecimento 
+de imagens usando deep learning. A repercussão foi rápida.</p>
+<p>Hoje, a AI traduz páginas da web e roteia automaticamente as chamadas de atendimento ao cliente. Ela ajuda <a href="https://blogs.nvidia.com/blog/2020/02/11/deeptek-ai-tuberculosis-detection-xrays/" target="_blank" rel="noopener noreferrer">hospitais a ler exames de raios X</a>, bancos a calcular os riscos de crédito e <a href="https://blogs.nvidia.com/blog/2019/10/29/ai-reinventing-retail/" target="_blank" rel="noopener noreferrer">varejistas a planejarem suas prateleiras para otimizar as vendas</a>.</p>
+<p>Em resumo, o machine learning, uma parte do <a href="https://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/" target="_blank" rel="noopener noreferrer">amplo campo da AI</a>,
+ deve se tornar tão comum quanto as aplicações de software. É por isso 
+que o processo de executar ML precisa ser tão sério quanto o trabalho de
+ execução de sistemas de IT.</p>
+<h2>Machine Learning Chega ao DevOps</h2>
+<p>MLOps é modelado na disciplina existente de DevOps, a prática moderna
+ de escrever, implementar e executar aplicações empresariais. O DevOps 
+começou há uma década como uma maneira em que equipes opostas de 
+desenvolvedores de software (os Devs) e de operações de IT (Ops) 
+poderiam colaborar.</p>
+<p>O MLOps adiciona à equipe os cientistas de dados, que preparam 
+conjuntos de dados e criam modelos de AI que os analisam. Também são 
+incluídos engenheiros de ML que executam esses conjuntos de dados nos 
+modelos de maneiras disciplinadas e automatizadas.</p>
+<figure id="attachment_46623" aria-describedby="caption-attachment-46623" style="width: 672px" class="wp-caption alignleft"><a href="https://blogs.nvidia.com/wp-content/uploads/2020/09/MLOps-Neal-Analytics.png"><img decoding="async" class="wp-image-46623 size-large" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/MLOps-Neal-Analytics-672x296.png" alt="" title="" style="" width="672" height="296"></a><figcaption id="caption-attachment-46623" class="wp-caption-text">Os MLOps combinam machine learning, desenvolvimento de aplicações e operações de IT. Fonte: Neal Analytics</figcaption></figure>
+<p>É um grande desafio tanto no desempenho bruto quanto no rigor de 
+gerenciamento. Os conjuntos de dados são enormes, crescentes e podem 
+mudar em tempo real. Os modelos de AI exigem monitoramento cuidadoso por
+ ciclos de experimentos, ajuste e retreinamento para manter a alta 
+precisão.</p>
+<p>Portanto, o MLOps precisa de uma poderosa infraestrutura de AI que 
+pode ser dimensionada à medida que as empresas crescem. Para essa base, 
+muitas empresas usam os <a href="https://www.nvidia.com/pt-br/data-center/dgx-systems/" target="_blank" rel="noopener noreferrer">sistemas NVIDIA DGX</a>, o <a href="https://www.nvidia.com/pt-br/technologies/cuda-x/" target="_blank" rel="noopener noreferrer">CUDA-X</a> e outros componentes de software disponíveis no centro de software da NVIDIA, o <a href="https://ngc.nvidia.com/catalog/all" target="_blank" rel="noopener noreferrer">NGC</a>.</p>
+<h2>Acompanhamento do Ciclo de Vida para Cientistas de Dados</h2>
+<p>Com uma infraestrutura de AI instalada, um data center corporativo 
+pode se basear nos seguintes elementos de um pacote de software MLOps:</p>
+<ul>
+<li>Fontes de dados e conjuntos de dados criados a partir delas</li>
+<li>Um repositório de modelos de AI marcados com seus históricos e atributos</li>
+<li>Um pipeline de ML automatizado que gerencia conjuntos de dados, modelos e experiências por seus ciclos de vida</li>
+<li>Contêineres de software, geralmente baseados em Kubernetes, para simplificar a execução desses trabalhos</li>
+</ul>
+<p>É um conjunto potente de trabalhos relacionados para unir em um só processo.</p>
+<p>Os cientistas de dados precisam da liberdade de cortar e colar 
+conjuntos de dados de fontes externas e lagos de dados internos. Ainda 
+assim, seu trabalho e esses conjuntos de dados precisam ser 
+cuidadosamente rotulados e acompanhados.</p>
+<p>Da mesma forma, eles precisam fazer experiências e iterar para criar 
+ótimos modelos bem ajustados para a tarefa em questão. Para isso, são 
+necessários sandboxes flexíveis e repositórios sólidos.</p>
+<p>Eles também precisam de maneiras de trabalhar com os engenheiros de 
+ML que executam os conjuntos de dados e modelos por protótipos, testes e
+ produção. É um processo que exige automação e atenção aos detalhes para
+ que modelos possam ser facilmente interpretados e reproduzidos.</p>
+<p>Hoje, esses recursos estão se tornando disponíveis como parte dos 
+serviços de computação em cloud. As empresas que veem o machine learning
+ como estratégico estão criando seus próprios centros de excelência de 
+AI usando serviços ou ferramentas do MLOps a partir de um conjunto cada 
+vez maior de fornecedores.</p>
+<figure id="attachment_46626" aria-describedby="caption-attachment-46626" style="width: 672px" class="wp-caption aligncenter"><a href="https://blogs.nvidia.com/wp-content/uploads/2020/09/ML-pipeline-Gartner-1280.png"><img decoding="async" loading="lazy" class="wp-image-46626 size-large" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/ML-pipeline-Gartner-1280-672x341.png" alt="Gartner on ML pipeline" width="672" height="341"></a><figcaption id="caption-attachment-46626" class="wp-caption-text">A visão do Gartner sobre o pipeline de machine learning</figcaption></figure>
+<h2>Ciência de Dados na Produção em Escala</h2>
+<p>No início, empresas como Airbnb, Facebook, Google, NVIDIA e Uber tinham que criar esses próprios recursos.</p>
+<p>“Tentamos usar código-fonte aberto o máximo possível, mas, em muitos 
+casos, não havia uma solução para o que queríamos fazer em escala”, 
+disse Nicolas Koumchatzky, Diretor de Infraestrutura de AI da NVIDIA.</p>
+<p>“Quando eu ouvi o termo MLOps, percebi que é o que estamos criando 
+agora e o que eu estava criando antes no Twitter”, ele acrescentou.</p>
+<p>A equipe de Koumchatzky na NVIDIA desenvolveu o <a href="https://blogs.nvidia.com/blog/2018/09/13/how-maglev-speeds-autonomous-vehicles-to-superhuman-levels-of-safety/" target="_blank" rel="noopener noreferrer">MagLev</a>, o software MLOps que hospeda o <a href="https://developer.nvidia.com/drive" target="_blank" rel="noopener noreferrer">NVIDIA DRIVE</a>,
+ nossa plataforma para criação e teste de veículos autônomos. Como parte
+ de sua base para o MLOps, ele usa o NVIDIA Container Runtime e Apollo, 
+um conjunto de componentes desenvolvidos na NVIDIA para gerenciar e 
+monitorar contêineres Kubernetes executados em grandes clusters.</p>
+<h2>Estabelecendo a Base para MLOps na NVIDIA</h2>
+<p>A equipe de Koumchatzky executa seus trabalhos na infraestrutura 
+interna de AI da NVIDIA com base em clusters de GPUs chamados DGX PODs. 
+Antes de começar os trabalhos, a equipe de infraestrutura verifica se 
+eles estão usando práticas recomendadas.</p>
+<p>Primeiro, “tudo deve ser executado em um contêiner, o que evita uma 
+quantidade inacreditável de dificuldades para buscar bibliotecas e 
+tempos de execução que um software de AI precisa”, disse Michael 
+Houston, cuja equipe cria os sistemas de AI da NVIDIA, incluindo o <a href="https://blog.nvidia.com.br/2020/07/24/top500-supercomputadores/" target="_blank" rel="noopener noreferrer">Selene</a>, um <a href="https://blogs.nvidia.com/blog/2020/05/14/dgx-superpod-a100/" target="_blank" rel="noopener noreferrer">DGX SuperPOD</a> recentemente chamado de o computador industrial mais potente dos EUA.</p>
+<p>Entre os outros pontos de verificação da equipe, os trabalhos devem:</p>
+<ul>
+<li>Iniciar contêineres com um mecanismo aprovado</li>
+<li>Provar que o trabalho pode ser executado em vários nós de GPU</li>
+<li>Mostrar dados de desempenho para identificar possíveis gargalos</li>
+<li>Mostrar os dados de criação de perfil para garantir que o software foi depurado</li>
+</ul>
+<p>A maturidade das práticas de MLOps usadas em empresas hoje varia 
+amplamente, de acordo com Edwin Webster, um cientista de dados que 
+iniciou a prática de consultoria de MLOps há um ano para a <a href="https://nealanalytics.com/" target="_blank" rel="noopener noreferrer">Neal Analytics</a> e escreveu <a href="https://nealanalytics.com/blog/what-is-mlops/" target="_blank" rel="noopener noreferrer">um artigo definindo o MLOps</a>.&nbsp;
+ Em algumas empresas, os cientistas de dados guardam modelos em seus 
+notebooks pessoais, outros procuram grandes fornecedores de serviços em 
+cloud para um serviço completo, afirmou.</p>
+<h2>Duas Histórias de Sucesso com MLOps</h2>
+<p>Webster compartilhou histórias de sucesso de dois de seus clientes.</p>
+<p>Um envolve um grande varejista que usou recursos de MLOps em um 
+serviço de cloud público para criar um serviço de AI que reduziu o 
+desperdício de 8 a 9 por cento com previsões diárias de quando 
+reabastecer as prateleiras com produtos perecíveis. Uma equipe de 
+cientistas de dados no varejista criou conjuntos de dados e modelos 
+construídos; o serviço de cloud empacotou elementos-chave em contêineres
+ e, em seguida, executou e gerenciou as tarefas de AI.</p>
+<p>Em outro caso, um fabricante de computadores desenvolveu um software 
+que usava a AI para prever quando seus notebooks precisariam de 
+manutenção para instalar automaticamente as atualizações de software. 
+Usando as práticas de MLOps estabelecidas e especialistas internos, o 
+OEM gravou e testou seus modelos de AI em uma amostra de 3.000 
+notebooks. O fabricante de computadores agora fornece o software a seus 
+maiores clientes.</p>
+<p>Muitas, mas não todas, as empresas da Fortune 100 estão adotando o 
+MLOps, afirmou Shubhangi Vashisth, uma analista sênior da área na 
+Gartner. “Está ganhando espaço, mas ainda não é comum”, disse ela.</p>
+<p>Vashisth é co-autora de um white paper que apresenta três etapas para
+ começar a usar o MLOps: alinhar as partes interessadas sobre as metas, 
+criar uma estrutura organizacional que define quem é o proprietário do 
+que e, depois, definir responsabilidades e funções (a Gartner lista uma 
+dúzia delas).</p>
+<figure id="attachment_46629" aria-describedby="caption-attachment-46629" style="width: 640px" class="wp-caption aligncenter"><a href="https://blogs.nvidia.com/wp-content/uploads/2020/09/MLOPS-process-Gartner-1280.png"><img decoding="async" loading="lazy" class="wp-image-46629 size-large" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/MLOPS-process-Gartner-1280-640x500.png" alt="Gartner on MLOps which it here calls the machine learning development lifecycle " width="640" height="500"></a><figcaption id="caption-attachment-46629" class="wp-caption-text">A Gartner se refere ao processo geral de MLOps como o ciclo de vida de desenvolvimento de machine learning (MLDLC).</figcaption></figure>
+<h2>Atenção às Palavras de Efeito: AIOps, ITOA, DLOps, DataOps e Mais</h2>
+<p>Não se perca em um mar de palavras que cresceu ao longo do tempo. A indústria apostou claramente sua energia em torno do MLOps.</p>
+<p>Por outro lado, AIOps é uma prática mais estreita de usar o machine 
+learning para automatizar as funções de IT. Uma parte do AIOps é a 
+análise de operações de IT, ou ITOA. Seu trabalho é examinar os dados 
+que o AIOps gera para descobrir como melhorar as práticas de IT.</p>
+<p>Da mesma forma, foram criados os termos DataOps e ModelOps para se 
+referir às pessoas e aos processos de criação e gerenciamento de 
+conjuntos de dados e modelos de AI, respectivamente. Essas são duas 
+partes importantes do quebra-cabeça geral do MLOps.</p>
+<p>Curiosamente, todos os meses milhares de pessoas pesquisam o 
+significado de DLOps. Talvez imaginem que DLOps são operações de IT para
+ deep learning. Mas o setor usa o termo MLOps, não DLOps, porque deep 
+learning faz parte do mais amplo campo de machine learning.</p>
+<p>Apesar das muitas consultas, é difícil encontrar qualquer coisa 
+on-line sobre DLOps. Por outro lado, nomes conhecidos, como Google e 
+Microsoft, bem como empresas em crescimento, como Iguazio e Paperspace, 
+publicaram white papers detalhados sobre MLOps.</p>
+<h2><b>MLOps: Uma Miscelânia de Softwares e Serviços em Expansão</b><b></b></h2>
+<p>Aqueles que preferem deixar outra pessoa responsável pelo MLOps têm muitas opções.</p>
+<p>Os principais provedores de serviços em cloud, como Alibaba, AWS e 
+Oracle, são alguns dos muitos que oferecem serviços de ponta a ponta 
+acessíveis do conforto de seu teclado.</p>
+<p>Para os usuários que distribuem seu trabalho em vários clouds, o 
+MLFlow da DataBricks oferece suporte a serviços de MLOps que trabalham 
+com vários provedores e várias linguagens de programação, incluindo 
+Python, R e SQL. Outras alternativas independentes de cloud incluem 
+software de código aberto, como Polyaxon e KubeFlow.</p>
+<p>As empresas que acreditam que a AI é um recurso estratégico que elas 
+querem atrás do firewall podem escolher entre uma lista crescente de 
+provedores de software MLOps. Em comparação com o código-fonte aberto, 
+essas ferramentas normalmente adicionam recursos valiosos e são mais 
+fáceis de serem colocadas em uso.</p>
+<p>A NVIDIA certificou produtos de seis deles como parte de seu <a href="https://blogs.nvidia.com/blog/2020/05/14/dgx-ready-software-program-partners/" target="_blank" rel="noopener noreferrer">programa DGX-Ready Software</a>:</p>
+<ul>
+<li><strong>Allegro AI</strong></li>
+<li><strong>cnvrg.io</strong></li>
+<li><strong>Core Scientific</strong></li>
+<li><strong>Domino Data Lab</strong></li>
+<li><strong>Iguazio</strong></li>
+<li><strong>Paperspace</strong></li>
+</ul>
+<p>Os seis fornecedores oferecem software para gerenciar conjuntos de dados e modelos que podem trabalhar com Kubernetes e NGC.</p>
+<p>Ainda não temos software pronto de MLOps.</p>
+<p>A Gartner monitora cerca de uma dúzia de fornecedores oferecendo 
+ferramentas de MLOps, incluindo ModelOp e Parallelm, agora parte da 
+DataRobot, afirmou a analista Vashisth. Atenção às ofertas que não 
+cobrem todo o processo, avisa ela. Elas forçam os usuários a importar e 
+exportar dados entre programas que eles devem reunir sozinhos, um 
+processo entediante e sujeito a erros.</p>
+<p>A edge da rede, especialmente para nós desconectados ou com conexão 
+parcial, é outra área pobre de MLOps por enquanto, afirmou Webster da 
+Neal Analytics.</p>
+<p>Koumchatzky, da NVIDIA, coloca ferramentas para curadoria e 
+gerenciamento de conjuntos de dados no topo da sua lista de desejos para
+ a comunidade.</p>
+<p>“Pode ser difícil rotular, mesclar ou dividir conjuntos de dados ou 
+exibir partes deles, mas há um ecossistema MLOps cada vez maior para 
+lidar com isso. A NVIDIA os desenvolveu internamente, mas acho que isso 
+ainda é subvalorizado pelo setor”, disse ele.</p>
+<p>A longo prazo, o MLOps precisa do equivalente a IDEs, os ambientes 
+integrados de desenvolvimento de software, como o Microsoft Visual 
+Studio, dos quais os desenvolvedores de softwares dependem. Enquanto 
+isso, Koumchatzky e sua equipe criaram suas próprias ferramentas para 
+visualizar e depurar modelos de AI.</p>
+<p>A boa notícia é que há muitos produtos para começar a usar o MLOps.</p>
+<p>Além do software de seus parceiros, a NVIDIA oferece um conjunto de 
+ferramentas de código-fonte aberto principalmente para gerenciar uma 
+infraestrutura de AI baseada em seus sistemas DGX, e essa é a base para o
+ MLOps. Essas ferramentas de software incluem:</p>
+<ul>
+<li>Foreman e <a href="https://maas.io/" target="_blank" rel="noopener noreferrer">MAAS</a> (Metal as a Service) para provisionar sistemas individuais</li>
+<li>Ansible e Git para gerenciamento de configuração de clusters</li>
+<li><a href="https://docs.nvidia.com/datacenter/dcgm/latest/dcgm-user-guide/overview.html#overview" target="_blank" rel="noopener noreferrer">Data Center GPU Manager</a> (DCGM) e <a href="https://docs.nvidia.com/datacenter/nvsm/nvsm-user-guide/index.html" target="_blank" rel="noopener noreferrer">NVIDIA System Management</a> (NVSM) para monitoramento e relatórios</li>
+<li><a href="https://github.com/NVIDIA/nvidia-container-runtime" target="_blank" rel="noopener noreferrer">NVIDIA Container Runtime</a> para iniciar contêineres com reconhecimento de GPU e <a href="https://github.com/NVIDIA/gpu-operator" target="_blank" rel="noopener noreferrer">NVIDIA GPU Operator</a> para simplificar o gerenciamento de GPUs em Kubernetes</li>
+<li><a href="https://developer.nvidia.com/nvidia-triton-inference-server" target="_blank" rel="noopener noreferrer">Triton Inference Server</a> e TensorRT para implementar modelos de AI na produção</li>
+<li>E o <a href="https://github.com/NVIDIA/deepops/" target="_blank" rel="noopener noreferrer">DeepOps</a> para scripts e instruções sobre como implementar e orquestrar todos os elementos acima</li>
+</ul>
+<p>Muitos estão disponíveis no NGC e em outros repositórios de 
+código-fonte aberto. Colocando esses ingredientes em uma receita de 
+sucesso, a NVIDIA fornece uma <a href="https://www.nvidia.com/pt-br/data-center/resources/nvidia-dgx-pod-reference-architecture/">arquitetura de referência</a> para criar clusters de GPUs chamados DGX PODs.</p>
+<p>Ao final, cada equipe precisa encontrar a combinação de produtos e 
+práticas de MLOps que melhor se adapta aos seus casos de uso. Todos eles
+ compartilham uma meta de criar uma maneira automatizada de executar a 
+AI de maneira fluida como uma parte diária da vida digital de uma 
+empresa.</p>
+</div>
+		<footer id="post-footer" class="entry-footer  ">
+			<div class="entry-footer-categories"><span class="cat-links">Categorias: <a href="https://blog.nvidia.com.br/category/data-center/" rel="category tag">Data Center</a> | <a href="https://blog.nvidia.com.br/category/deep-learning/" rel="category tag">Deep Learning</a></span></div><div class="entry-footer-tags"><span class="tags-links">Tags: <a href="https://blog.nvidia.com.br/tag/ciencia-de-dados/" rel="tag">Ciência de Dados</a> | <a href="https://blog.nvidia.com.br/tag/inteligencia-artificial/" rel="tag">Inteligência Artificial</a> | <a href="https://blog.nvidia.com.br/tag/machine-learning/" rel="tag">Machine Learning</a> | <a href="https://blog.nvidia.com.br/tag/ngc/" rel="tag">NGC</a> | <a href="https://blog.nvidia.com.br/tag/nvidia-dgx/" rel="tag">NVIDIA DGX</a> | <a href="https://blog.nvidia.com.br/tag/nvidia-dgx-superpod/" rel="tag">NVIDIA DGX SuperPOD</a> | <a href="https://blog.nvidia.com.br/tag/nvidia-drive/" rel="tag">NVIDIA DRIVE</a></span></div><div id="disqus_recommendations" style="margin-bottom: 12px;"><iframe id="dsq-app1802" name="dsq-app1802" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 100% !important; border: medium none !important; overflow: hidden !important; height: 269px !important; display: inline !important; box-sizing: border-box !important;" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/a_003.html" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe></div><div id="disqus_thread"><iframe id="dsq-app3375" name="dsq-app3375" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px !important; min-width: 100% !important; border: medium none !important; overflow: hidden !important; height: 459px !important;" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/a_004.html" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe></div>		</footer><!-- .entry-footer -->
+
+	</div><!-- .entry-content -->
+	
+<div id="secondary" class="single-latest-news-widget-area" role="complementary">
+	<aside id="nvb5_subscribe_widget-2" class="widget NVB5_Subscribe_Widget">		<div class="subscribe-wrapper">
+						<a href="" class="subscribe-inner">
+															</a>
+		</div>
+		</aside><aside id="nvb5categorynewswidget-5" class="widget NVB5CategoryNewsWidget"><h3 class="widget-title">Todas as notícias da NVIDIA</h3>		<div class="category-latest-news">
+		
+<article class="excerpt orientation-landscape with-img post-3472 post type-post status-publish format-standard has-post-thumbnail hentry category-inteligencia-artificial tag-deep-learning tag-deep-learning-institute tag-gtc tag-inception tag-inteligencia-artificial tag-programa-de-desenvolvedor loop-item-1 for-pagenum-1" id="post-3472" data-post-id="3472">
+
+	<div class="inner for-hentry img-bg orientation-landscape with-img" style="background-image:url('https://blog.nvidia.com.br/wp-content/uploads/sites/12/2023/05/working-in-ai-406x215.jpg');">
+
+		<div class="inner2 for-hentry no-gradient">
+			<a href="https://blog.nvidia.com.br/2023/05/25/como-iniciar-uma-carreira-em-ia/" class="aggregation-card-link" title="Como Iniciar Uma Carreira em IA"></a>
+		</div><!-- /.inner2.for-hentry -->
+	</div><!-- /.inner.for-hentry -->
+
+	<div class="title-excerpt">
+	<p class="entry-title"><a href="https://blog.nvidia.com.br/2023/05/25/como-iniciar-uma-carreira-em-ia/" class="entry-title-text">Como Iniciar Uma Carreira em IA</a></p>			<!-- DATE -->
+			<div class="publish-date">
+				<div class="meta-section-inner">
+									</div>
+			</div>
+			</div>
+</article>
+<article class="excerpt orientation-landscape with-img post-3465 post type-post status-publish format-standard has-post-thumbnail hentry category-deep-learning category-graficos-profissionais tag-ai-generativa loop-item-1 for-pagenum-1" id="post-3465" data-post-id="3465">
+
+	<div class="inner for-hentry img-bg orientation-landscape with-img" style="background-image:url('https://blog.nvidia.com.br/wp-content/uploads/sites/12/2023/05/MicrosoftTeams-image-1-382x215.jpg');">
+
+		<div class="inner2 for-hentry no-gradient">
+			<a href="https://blog.nvidia.com.br/2023/05/22/ai-generativa-o-que-voce-precisa-saber-sobre-essa-tecnologia/" class="aggregation-card-link" title="AI Generativa: O Que Você Precisa Saber Sobre essa Tecnologia"></a>
+		</div><!-- /.inner2.for-hentry -->
+	</div><!-- /.inner.for-hentry -->
+
+	<div class="title-excerpt">
+	<p class="entry-title"><a href="https://blog.nvidia.com.br/2023/05/22/ai-generativa-o-que-voce-precisa-saber-sobre-essa-tecnologia/" class="entry-title-text">AI Generativa: O Que Você Precisa Saber Sobre essa Tecnologia</a></p>			<!-- DATE -->
+			<div class="publish-date">
+				<div class="meta-section-inner">
+									</div>
+			</div>
+			</div>
+</article>
+<article class="excerpt orientation-landscape with-img post-3442 post type-post status-publish format-standard has-post-thumbnail hentry category-inteligencia-artificial tag-cases-de-clientes loop-item-1 for-pagenum-1" id="post-3442" data-post-id="3442">
+
+	<div class="inner for-hentry img-bg orientation-landscape with-img" style="background-image:url('https://blog.nvidia.com.br/wp-content/uploads/sites/12/2023/05/Picture1-4-382x215.jpg');">
+
+		<div class="inner2 for-hentry no-gradient">
+			<a href="https://blog.nvidia.com.br/2023/05/04/deutsche-bank-faz-parceria-com-a-nvidia-para-incorporar-ia-em-servicos-financeiros/" class="aggregation-card-link" title="Deutsche Bank faz Parceria com a NVIDIA para Incorporar IA em Serviços Financeiros"></a>
+		</div><!-- /.inner2.for-hentry -->
+	</div><!-- /.inner.for-hentry -->
+
+	<div class="title-excerpt">
+	<p class="entry-title"><a href="https://blog.nvidia.com.br/2023/05/04/deutsche-bank-faz-parceria-com-a-nvidia-para-incorporar-ia-em-servicos-financeiros/" class="entry-title-text">Deutsche Bank faz Parceria com a NVIDIA para Incorporar IA em Serviços Financeiros</a></p>			<!-- DATE -->
+			<div class="publish-date">
+				<div class="meta-section-inner">
+									</div>
+			</div>
+			</div>
+</article>
+<article class="excerpt orientation-landscape with-img post-3437 post type-post status-publish format-standard has-post-thumbnail hentry category-inteligencia-artificial tag-cases-de-clientes loop-item-1 for-pagenum-1" id="post-3437" data-post-id="3437">
+
+	<div class="inner for-hentry img-bg orientation-landscape with-img" style="background-image:url('https://blog.nvidia.com.br/wp-content/uploads/sites/12/2023/05/Picture1-406x213.png');">
+
+		<div class="inner2 for-hentry no-gradient">
+			<a href="https://blog.nvidia.com.br/2023/05/04/fit-instituto-de-tecnologia-tiliza-tecnologia-nvidia-enterprise/" class="aggregation-card-link" title="" style=""></a>
+		</div><!-- /.inner2.for-hentry -->
+	</div><!-- /.inner.for-hentry -->
+
+	<div class="title-excerpt">
+	<p class="entry-title"><a href="https://blog.nvidia.com.br/2023/05/04/fit-instituto-de-tecnologia-tiliza-tecnologia-nvidia-enterprise/" class="entry-title-text">FIT – Instituto de Tecnologia Utiliza Tecnologia NVIDIA Enterprise para Potencializar a Detecção de Falhas com IA</a></p>			<!-- DATE -->
+			<div class="publish-date">
+				<div class="meta-section-inner">
+									</div>
+			</div>
+			</div>
+</article>
+<article class="excerpt orientation-landscape with-img post-3436 post type-post status-publish format-standard has-post-thumbnail hentry category-inteligencia-artificial tag-cases-de-clientes loop-item-1 for-pagenum-1" id="post-3436" data-post-id="3436">
+
+	<div class="inner for-hentry img-bg orientation-landscape with-img" style="background-image:url('https://blog.nvidia.com.br/wp-content/uploads/sites/12/2023/05/soybean-growth-farm-with-blue-sky-background-agriculture-plant-seeding-growing-step-concept-scaled-1-375x215.jpg');">
+
+		<div class="inner2 for-hentry no-gradient">
+			<a href="https://blog.nvidia.com.br/2023/05/04/inteligencia-artificial-no-agronegocio-como-a-tecnologia-tem-beneficiado-o-setor/" class="aggregation-card-link" title="Inteligência Artificial no Agronegócio: Como a Tecnologia tem Beneficiado o Setor"></a>
+		</div><!-- /.inner2.for-hentry -->
+	</div><!-- /.inner.for-hentry -->
+
+	<div class="title-excerpt">
+	<p class="entry-title"><a href="https://blog.nvidia.com.br/2023/05/04/inteligencia-artificial-no-agronegocio-como-a-tecnologia-tem-beneficiado-o-setor/" class="entry-title-text">Inteligência Artificial no Agronegócio: Como a Tecnologia tem Beneficiado o Setor</a></p>			<!-- DATE -->
+			<div class="publish-date">
+				<div class="meta-section-inner">
+									</div>
+			</div>
+			</div>
+</article>		</div>
+		</aside></div><!-- #secondary -->
+	<div class="clearfix"></div>
+
+</article><!-- #post-## -->
+			<nav class="navigation post-navigation nvb4-post-navigation" role="navigation">
+			<h2 class="screen-reader-text">Post navigation</h2>
+			<div class="nvb4-single-post-pagination">
+				<div class="for-next js-for-next">
+					<a href="https://blog.nvidia.com.br/2020/09/04/v7-labs-anotacao-imagem/?nv_excludes=1866,1872" title="O que é MLOps?"></a>
+				</div>
+			</div>
+			</nav><!-- .navigation -->
+					</div>
+			</main><!-- #main -->
+</div><!-- #primary -->
+
+	</div><!-- /.inner.for-content -->
+</div><!-- #content -->
+
+
+<footer id="colophon" class="site-footer" role="contentinfo">
+	<div class="inner for-colophon">
+
+		<!-- == FOOTER AREA 1 == -->
+		<div class="footer-area-1">
+						<nav class="footer-menu-1-slot" role="navigation">
+										<h3 class="menu-title">Informações Corporativas</h3>
+					<div class="menu-informacoes-corporativas-container"><ul id="footer-menu-1" class="menu"><li id="menu-item-2368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2368"><a href="https://www.nvidia.com/pt-br/about-nvidia/">Sobre a NVIDIA</a></li>
+<li id="menu-item-2369" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2369"><a href="https://www.nvidia.com/pt-br/about-nvidia/ai-computing/">Visão Geral Corporativa</a></li>
+<li id="menu-item-2370" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2370"><a href="https://www.nvidia.com/pt-br/technologies/">Tecnologias</a></li>
+<li id="menu-item-2371" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2371"><a href="https://www.nvidia.com/pt-br/research/">Pesquisa na NVIDIA</a></li>
+<li id="menu-item-2372" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2372"><a href="https://investor.nvidia.com/home/default.aspx">Investidores</a></li>
+<li id="menu-item-2373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2373"><a href="https://www.nvidia.com/pt-br/csr/">Responsabilidade Social</a></li>
+<li id="menu-item-2376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2376"><a href="https://www.nvidia.com/pt-br/foundation/">Fundação NVIDIA</a></li>
+</ul></div>			</nav>
+						<nav class="footer-menu-2-slot" role="navigation">
+										<h3 class="menu-title">Faça Parte</h3>
+					<div class="menu-faca-parte-container"><ul id="footer-menu-2" class="menu"><li id="menu-item-2378" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2378"><a href="https://www.nvidia.com/pt-br/forums/">Fóruns</a></li>
+<li id="menu-item-2379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2379"><a href="https://www.nvidia.com/pt-br/about-nvidia/careers/">Carreiras na NVIDIA</a></li>
+<li id="menu-item-2380" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2380"><a href="http://developer.nvidia.com/">Para Desenvolvedores</a></li>
+<li id="menu-item-2381" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2381"><a href="http://developer.nvidia.com/developer-program">Participe do Programa para Desenvolvedores</a></li>
+<li id="menu-item-2382" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2382"><a href="https://www.nvidia.com/pt-br/about-nvidia/partners/">Rede de Parceiros NVIDIA</a></li>
+<li id="menu-item-2383" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2383"><a href="https://www.nvidia.com/pt-br/startups/">NVIDIA Inception</a></li>
+<li id="menu-item-2384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2384"><a href="https://www.nvidia.com/pt-br/startups/venture-capital/">Recursos para Investidores de Startups</a></li>
+<li id="menu-item-2388" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2388"><a href="https://www.nvidia.com/pt-br/training/">Treinamentos Técnicos</a></li>
+<li id="menu-item-2389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2389"><a href="https://academy.nvidia.com/en/">Treinamento para Profissionais de IT</a></li>
+<li id="menu-item-2390" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2390"><a href="https://www.nvidia.com/pt-br/ai-data-science/professional-services/">Serviços Profissionais para Ciência de Dados</a></li>
+</ul></div>			</nav>
+						<nav class="footer-menu-3-slot" role="navigation">
+										<h3 class="menu-title">Notícias e Eventos</h3>
+					<div class="menu-noticias-e-eventos-container"><ul id="footer-menu-3" class="menu"><li id="menu-item-2393" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2393"><a href="https://nvidianews.nvidia.com/">Sala de Imprensa</a></li>
+<li id="menu-item-2394" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-2394"><a href="https://blog.nvidia.com.br/">Blog da NVIDIA</a></li>
+<li id="menu-item-2395" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2395"><a href="https://www.nvidia.com/pt-br/about-nvidia/webinar-portal/">Webinars</a></li>
+<li id="menu-item-2396" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2396"><a href="https://www.nvidia.com/pt-br/preferences/email-signup/">Fiquei Informado</a></li>
+<li id="menu-item-2397" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2397"><a href="https://www.nvidia.com/pt-br/events/">Calendário de Eventos</a></li>
+<li id="menu-item-2398" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2398"><a href="https://www.nvidia.com/en-us/gtc">NVIDIA GTC</a></li>
+<li id="menu-item-2399" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2399"><a href="https://www.nvidia.com/en-us/on-demand/">NVIDIA On-Demand</a></li>
+</ul></div>			</nav>
+					</div><!-- /.footer-area-1 -->
+
+		<!-- == FOOTER AREA 2 == -->
+		<div class="footer-area-2">
+			<div class="explore-cta">
+				<a href="https://www.nvidia.com/pt-br/contact/social/">
+					<div class="explore-cta-icon-wrapper">
+							<span class="icon icon-plus"></span>
+	</div>
+					<div class="explore-cta-text">
+						<div class="explore-cta-text-inner">
+							EXPLORE NOSSOS BLOGS REGIONAIS E OUTRAS REDES SOCIAIS </div>
+					</div>
+				</a>
+			</div>
+		</div><!-- /.footer-area-2 -->
+
+		<!-- == FOOTER AREA 3 == -->
+		<div class="footer-area-3">
+
+		</div><!-- /.footer-area-3 -->
+
+	</div><!-- /.inner.for-colophon -->
+
+	<div id="white-footer">
+		<div class="inner for-colophon">
+			<div class="area footer-area-4">
+				<svg class="global-footer__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 407.8 1000 184.4" enable-background="new 0 407.8 1000 184.4" xml:space="preserve">
+					<g id="nvidia-logo">
+						<path d="M987.1 555.7v-2.8h1.7c0.9 0 2.3 0.1 2.3 1.2 0 1.2-0.7 1.5-1.8 1.5H987.1M987.1 557.6h1.2l2.8 4.8h3l-3.1-5c1.5-0.1 2.9-0.8 2.9-3 0-2.7-1.8-3.5-4.9-3.5h-4.4v11.5h2.6L987.1 557.6M1000 556.7c0-6.8-5.2-10.7-11.1-10.7 -5.8 0-11.1 3.9-11.1 10.7 0 6.8 5.2 10.7 11.1 10.7S1000 563.5 1000 556.7M996.8 556.7c0 4.9-3.6 8.2-7.9 8.2l0 0c-4.4 0-7.9-3.3-7.9-8.2 0-4.9 3.6-8.2 7.9-8.2C993.2 548.6 996.8 551.9 996.8 556.7z"></path>
+						<path d="M593.2 442.7v121.1h34.2V442.7H593.2zM324.4 442.5v121.2h34.5v-94.1l26.9 0.1c8.8 0 15 2.2 19.2 6.7 5.4 5.7 7.6 15.1 7.6 32v55.3H446v-66.9c0-47.8-30.5-54.3-60.2-54.3C385.8 442.5 324.4 442.5 324.4 442.5zM648.3 442.7v121.1h55.4c29.5 0 39.2-4.9 49.6-15.9 7.4-7.7 12.1-24.7 12.1-43.3 0-17-4-32.2-11.1-41.7 -12.5-16.9-30.8-20.2-58.1-20.2H648.3zM682.2 469h14.7c21.3 0 35.1 9.5 35.1 34.4 0 24.8-13.7 34.4-35.1 34.4h-14.7V469zM544 442.7l-28.5 95.9 -27.3-95.9h-36.9l39 121.1h49.2l39.3-121.1H544zM781.4 563.7h34.2v-121h-34.2V563.7zM877.2 442.7l-47.7 121h33.7l7.6-21.3h56.5l7.2 21.3h36.6l-48.2-121H877.2zM899.4 464.8l20.7 56.6H878L899.4 464.8z"></path>
+						<path d="M103.9 462.8v-16.6c1.6-0.1 3.3-0.2 4.9-0.2 45.6-1.4 75.4 39.1 75.4 39.1s-32.2 44.8-66.8 44.8c-5 0-9.4-0.8-13.4-2.2v-50.5c17.7 2.2 21.3 10 32 27.7l23.7-20c0 0-17.3-22.7-46.5-22.7C110 462.3 106.9 462.5 103.9 462.8M103.9 407.8v24.8c1.6-0.1 3.3-0.2 4.9-0.3 63.3-2.2 104.6 51.9 104.6 51.9s-47.4 57.7-96.7 57.7c-4.5 0-8.7-0.4-12.7-1.1v15.4c3.4 0.4 7 0.7 10.6 0.7 46 0 79.2-23.5 111.4-51.2 5.3 4.3 27.2 14.7 31.7 19.2 -30.6 25.6-101.9 46.3-142.3 46.3 -3.9 0-7.6-0.2-11.3-0.6v21.6h174.7V407.8H103.9zM103.9 527.8v13.1c-42.5-7.6-54.3-51.8-54.3-51.8s20.4-22.6 54.3-26.3v14.4c0 0 0 0-0.1 0 -17.7-2.2-31.7 14.5-31.7 14.5S80 519.6 103.9 527.8M28.4 487.2c0 0 25.2-37.1 75.5-41v-13.5C48.2 437.2 0 484.4 0 484.4s27.3 79 103.9 86.3v-14.4C47.7 549.2 28.4 487.2 28.4 487.2z"></path>
+					</g>
+					<image src="images/nvidia-logo.png" alt="NVIDIA" title="NVIDIA" xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+				</svg>
+					<div class="site-info">
+		<ul class="site-info-list">
+			<li>
+				<a href="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/">Política de Privacidade</a>
+			</li>
+							<li>
+					<a href="https://www.nvidia.com/en-us/privacy-center/">Manage My Privacy</a>
+				</li>
+										<li>
+					<a href="https://blog.nvidia.com.br/2020/09/08/o-que-e-mlops/">Legal</a>
+				</li>
+										<li>
+					<a href="https://www.nvidia.com/en-us/about-nvidia/accessibility/">Accessibility</a>
+				</li>
+										<li>
+					<a href="https://www.nvidia.com/en-us/product-security/">Product Security</a>
+				</li>
+										<li>
+					<a href="https://www.nvidia.com/en-us/contact/">Contact</a>
+				</li>
+					</ul>
+		<div class="copyright">
+			Copyright © 2023 NVIDIA Corporation 		</div>
+	</div>
+				</div>
+			<div class="area footer-area-5">
+				<a href="https://www.nvidia.com/en-us/location-selector/">
+				Brasil				</a>
+			</div>
+		</div>
+	</div>
+</footer><!-- #colophon -->
+
+</div><!-- #page -->
+<script async="">(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='a25ba807c1219a7b6f9259b59646746d7be6f9c23edf61f197d734478c8be3aa';j.dataset.sumoPlatform='wordpress';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>    <script type="application/javascript">
+      var ajaxurl = "https://blog.nvidia.com.br/wp-admin/admin-ajax.php";
+
+      function sumo_add_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_add_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_remove_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_remove_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_get_woocommerce_cart_subtotal(callback) {
+        jQuery.ajax({
+          method: 'POST',
+          url: ajaxurl,
+          dataType: 'html',
+          data: {
+            action: 'sumo_get_woocommerce_cart_subtotal',
+          },
+          success: function(subtotal) {
+            return callback(null, subtotal);
+          },
+          error: function(err) {
+            return callback(err, 0);
+          }
+        });
+      }
+    </script>
+    
+	            <script type="text/javascript">
+	            	/**
+	            	* We define our custom disqus configs here. This function is invoked from:
+	            	* /disqus-comment-system/public/js/comment_embed.js by variable `disqus_config_custom`
+					*/
+	                var disqus_config = function () {
+	                	this.language = "pt_BR";
+	                };
+	            </script><script src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/polyfill.js"></script><script type="text/javascript" id="disqus_count-js-extra">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"blogoficialnvidiabrasil"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/comment_count.js" id="disqus_count-js"></script>
+<script type="text/javascript" id="disqus_embed-js-extra">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.23"},"disqusIdentifier":"1872 https:\/\/blog.nvidia.com.br\/?p=1872","disqusShortname":"blogoficialnvidiabrasil","disqusTitle":"O que \u00e9 MLOps?","disqusUrl":"https:\/\/blog.nvidia.com.br\/2020\/09\/08\/o-que-e-mlops\/","postId":"1872"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/comment_embed.js" id="disqus_embed-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/yith.infinitescroll.min.js" id="yith-infinitescroll-js"></script>
+<script type="text/javascript" id="yith-infs-js-extra">
+/* <![CDATA[ */
+var yith_infs = {"navSelector":"nav.navigation","nextSelector":"nav.navigation a.next","itemSelector":"article.post","contentSelector":"#main","loader":"https:\/\/blog.nvidia.com.br\/wp-content\/plugins\/yith-infinite-scrolling\/assets\/images\/loader.gif","shop":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/yith-infs.min.js" id="yith-infs-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/count_002.js" id="count-js-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/load-disqus.js" id="nv-disqus-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery.fitvids.min.js" id="fitvids-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/isotope.pkgd.min.js" id="isotope-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery.bxslider.min.js" id="bxslider-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery.ba-throttle-debounce.min.js" id="throttle-debounce-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery.waypoints.min.js" id="waypoints-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/sticky.min.js" id="waypoints-sticky-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery.magnific-popup.min.js" id="magnific-popup-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery.webui-popover.min.js" id="webui-popover-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/jquery.matchHeight.js" id="matchHeight-js"></script>
+<script type="text/javascript" id="nvb4-main-js-extra">
+/* <![CDATA[ */
+var nvb4ThemeVars = {"ajaxUrl":"https:\/\/blog.nvidia.com.br\/wp-admin\/admin-ajax.php","disqus_url":"https:\/\/blog.nvidia.com.br\/2020\/09\/08\/o-que-e-mlops\/","language":"ICL_LANGUAGE_CODE"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/main.js" id="nvb4-main-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/comment-reply.min.js" id="comment-reply-js"></script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/new-tab.js" id="page-links-to-js"></script>
+<script type="text/javascript" id="ea-share-count-js-extra">
+/* <![CDATA[ */
+var easc = {"url":"https:\/\/blog.nvidia.com.br\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="O%20que%20%C3%A9%20MLOps%20-%20Blog%20oficial%20NVIDIA%20Brasil_files/share-count.js" id="ea-share-count-js"></script>
+		<div id="easc-modal-wrap" style="display:none;">
+			<div class="easc-modal">
+				<span class="easc-modal-title">Share this Article</span>
+				<p>
+					<label for="easc-modal-recipient">Friend's Email Address</label>
+					<input type="text" id="easc-modal-recipient">
+				</p>
+				<p>
+					<label for="easc-modal-name">Your Name</label>
+					<input type="text" id="easc-modal-name">
+				</p>
+				<p>
+					<label for="easc-modal-email">Your Email Address</label>
+					<input type="text" id="easc-modal-email">
+				</p>
+				<p class="easc-modal-validation">
+					<label for="easc-modal-validation">Comments</label>
+					<input type="text" id="easc-modal-validation" autocomplete="off">
+				</p>
+				<p class="easc-modal-submit">
+					<button id="easc-modal-submit"><i class="ea-share-count-icon easc-envelope send-email-btn-icon"></i> Send Email</button>
+				</p>
+				<a href="#" id="easc-modal-close"><i class="easc-close close-icon"></i></a>
+				<div id="easc-modal-sent">Email sent!</div>
+			</div>
+		</div>
+			<script type="text/javascript"> _satellite.pageBottom(); </script><script>_satellite["_runScript3"](function(event, target, Promise) {
+(function() {
+
+  var didInit = false;
+
+  function initMunchkin() {
+
+    if(didInit === false) {
+
+      didInit = true;
+
+      Munchkin.init('156-OFN-742');
+
+    }
+
+  }
+
+  var s = document.createElement('script');
+
+  s.type = 'text/javascript';
+
+  s.async = true;
+
+  s.src = '//munchkin.marketo.net/munchkin.js';
+
+  s.onreadystatechange = function() {
+
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+
+      initMunchkin();
+
+    }
+
+  };
+
+  s.onload = initMunchkin;
+
+  document.getElementsByTagName('head')[0].appendChild(s);
+
+})();
+});</script><script>_satellite["_runScript4"](function(event, target, Promise) {
+try {
+
+
+    if (typeof jQuery != 'undefined' || typeof $ != 'undefined') {
+
+
+
+        if (window.$) {
+            $(document).on("FP-formSubmitSuccess", function() {
+                var formId = formSubmitData.formID;
+                try {
+                   _satellite.logger.log("inside formSUbmit 1");
+                    _satellite.track('formSubmit', {
+                        formID: formId
+                    });
+                } catch (e) {}
+            });
+
+            $(document).on("fp-success-message", function() {
+                var formId = _satellite.getVar('formId');
+                //console.log('fp-success-message');
+                if (formId) {
+                  _satellite.logger.log("inside formSUbmit 2");
+                    _satellite.track('formSubmit', {
+                        formID: formId
+                    });
+                }
+            });
+
+            if (window['MktoForms2']) {
+                MktoForms2.whenReady(function(form) {
+                  var ncid_c=_satellite.cookie.get('sc_cmp');
+                  var elem=document.querySelector('form input[name*="ncid"]');
+                  if(typeof ncid_c !="undefined" && ncid_c!="" ){
+                    elem.setAttribute("value",ncid_c);
+                  }else if(document.location.href.indexOf('ncid=')<0){
+                    elem.setAttribute("value","no-ncid");
+                  }
+                  
+                  
+
+                    form.onSuccess(function(vals) {
+                        //var vals = form.vals();   
+                        var fId = 'mktoform_' + vals["formid"];
+                        console.log(fId);
+                        _satellite.track('formSubmit', {
+                            formID: fId
+                        });
+                        if (fId == 'mktoform_7430' || fId == 'mktoform_7431' || fId == 'mktoform_7433')
+							_satellite.track('mktoform_7430', {
+                                formID: fId
+                            });
+							
+
+                        if (fId == 'mktoform_4627') {
+                            _satellite.track('mktoform_4627', {
+                                formID: fId
+                            });
+                        }
+                      
+                        if (fId == 'mktoform_18029') {
+                            _satellite.track('mktoform_18029', {
+                                formID: fId
+                            });
+                        }
+
+                        if (fId == 'mktoform_11899') {
+                            _satellite.track('mktoform_11899', {
+                                formID: fId
+                            });
+                        }
+                       
+                    });
+
+
+                });
+            }
+
+            document.addEventListener('formSubmissionSuccess', triggerFormOmni, true);
+
+            function triggerFormOmni(e) {
+                // try{
+                var formName = '';
+                if (e.detail.formName != "") {
+                    formName = e.detail.formName;
+                }
+              	console.log('form name',formName);
+                if (window.self != window.top) {
+                    //var formPath=$('.aemformcontainer').attr('data-form-page-path');
+                    //formId=formPath.substring(formPath.lastIndexOf('/') + 1); 
+                    if (formName) {
+                        _satellite.logger.info('form in iframe');
+                       // _satellite.track('iframeFormSubmit', {
+                          dtm_track('iframeFormSubmit', {
+                            formID: formName
+                        });
+                    }
+                } else {
+                  _satellite.logger.log('inside formsubmit 1');
+                    //_satellite.track('formSubmit', {
+                  dtm_track('formSubmit', {
+                      
+                        formID: formName
+                    });
+                }
+
+                if (formName.indexOf('spark-ebook-notify-me') > -1) {
+                    _satellite.track('spark-ebook-notify-me', {
+                        formID: 'spark-ebook-notify-me'
+                    });
+                }
+                if (formName.indexOf('merlin-ppc-display-demand-gen-form') > -1) {
+                    _satellite.track('nvf_merlin-ppc-display-demand-gen-form', {
+                        formID: 'nvf_merlin-ppc-display-demand-gen-form'
+                    });
+                }
+              if (formName.indexOf('driving-agility-in-retail-with-ai-ebook') > -1) {
+                    _satellite.track('nvf_driving-agility-in-retail-with-ai-ebook', {
+                        formID: 'nvf_driving-agility-in-retail-with-ai-ebook'
+                    });
+                }
+                //console.log(formName);
+                var purl = window.location.hostname + window.location.pathname;
+                if (purl.indexOf('en-gb/data-center/dgx-a100/') > -1 || purl.indexOf('de-de/data-center/dgx-a100/') > -1 || purl.indexOf('fr-fr/data-center/dgx-a100/') > -1 || purl.indexOf('en-gb/data-center/dgx-systems/buy/') > -1 || purl.indexOf('de-de/data-center/dgx-systems/buy/') > -1 || purl.indexOf('fr-fr/data-center/dgx-systems/buy/') > -1) {
+                    if (formName.indexOf('dgx-a100-gated-form') > -1 && (purl.indexOf('en-gb/data-center/dgx-a100/') > -1 || purl.indexOf('de-de/data-center/dgx-a100/') > -1 || purl.indexOf('fr-fr/data-center/dgx-a100/') > -1)) {
+                        _satellite.track('nvf_dgx-a100-gated-form', {
+                            formID: 'nvf_dgx-a100-gated-form'
+                        });
+                    } else {
+                        _satellite.track('nvf_dgxa100_contactus', {
+                            formID: 'nvf_dgxa100_contactus'
+                        });
+                    }
+                    //dtm_track('nvf_dgxSystemsBuy_contactus',{formID:'nvf_dgxSystemsBuy_contactus'});
+                }
+
+                //}catch(err){}
+            }
+
+            if (document.URL.indexOf('/on-demand/session/') < 0) {
+                var runOnce = true;
+                $('body').delegate("form:not([id*='search']):not([id^='Form']):not([id^='redeem']):not([id^='form']) input:not([type^='checkbox']):visible:first", "focusin", function() {
+                    if (runOnce) {
+                        var formId = $(this).closest('form').attr("id");
+
+                        if (formId.indexOf('guideContainerForm') > -1) {
+                            var formPath = $('.aemformcontainer').attr('data-form-page-path');
+                            if (formPath != undefined) {
+                                formId = formPath.substring(formPath.lastIndexOf('/') + 1);
+                            }
+                        }
+
+                        if (window.self != window.top) {
+                           var formPath = '';
+
+                            if (document.URL.indexOf('/nvidia-forms/products-notify-me/') > -1) {
+                                formPath = window.location.href;
+                                formId = formPath.substring(formPath.lastIndexOf('productName=') + 12);
+                                formId = decodeURIComponent(formId).replaceAll(' ', '-') + '-notifyme';
+                            } else {
+                                formPath = $('.aemformcontainer').attr('data-form-page-path');
+                                formId = formPath.substring(formPath.lastIndexOf('/') + 1);
+                            }
+                            if (formId) {
+                               _satellite.logger.info('form in iframe');
+                             //   _satellite.track('iframeFormStart', {
+                                  dtm_track('iframeFormStart', {
+                                    formID: formId
+                                });
+                            }
+                        } else {
+                            if (formId) {
+                                _satellite.logger.info('form not in iframe');
+                               // _satellite.track('formStart', {
+                                  dtm_track('formStart', {
+                                    formID: formId
+                                });
+                            }
+                        }
+                        runOnce = false;
+                        //}
+                    }
+                });
+            }
+            var dn = window.location.host;
+            if (dn.indexOf('profile.nvidia.com') > -1) {
+                var execOnce = true;
+                $('body').delegate("form input[type='email']:visible:first", "focusin", function() {
+                    if (execOnce) {
+                        var formId = 'Unsubscribe';
+
+                        if (formId) {
+                            _satellite.track('formStart', {
+                                formID: formId
+                            });
+                        }
+                        execOnce = false;
+                    }
+                });
+
+            }
+          
+         
+
+
+        }
+    }
+   var runOnce = true;
+
+                $('div.side-layout').delegate("form:not([id*='search']):not([id^='Form']):not([id^='redeem']):not([id^='form']) input:not([type^='checkbox']):visible:first", "focusin", function() {
+                                         if (runOnce) {
+                       var formId = $('.gtcRegistration form').attr('class');
+                                           if (formId) {
+                                
+                               dtm_track('formStart', {
+                                    formID: formId
+                                });
+                                                 }
+                       
+                        
+                       runOnce = false;
+                      
+                    }
+                });
+
+
+
+} catch (e) {}
+});</script><script>_satellite["_runScript5"](function(event, target, Promise) {
+window.ClickOmniTrack=function(obj,eventVal,prefix,secName){  
+  try
+   { s.eVar42=s.prop42='';
+      secName = prefix+secName+":"+s.pageName ;
+     secName=secName.toLowerCase();
+      s.events=eventVal;s.linkTrackEvents=eventVal;
+      s.eVar10=s.prop10=secName;
+      s.linkTrackVars='events,eVar10,prop10';
+    	if(_satellite.getVar('browserDoNotTrack')=="disabled"){
+        console.log('click omni track Do not track',_satellite.getVar('browserDoNotTrack'));
+      s.tl(obj,'o',secName); }
+	    s.linkTrackVars="None"
+	    s.linkTrackEvents="None"
+	 }catch(error){}}
+window.ClickOmniSearch=function(obj,eventVal,prefix,secName){  
+  try
+   { s.eVar42=s.prop42='';
+    	var srchKeyword=secName;
+      secName = prefix+secName+":"+s.pageName ;
+     secName=secName.toLowerCase();
+      s.events=eventVal;s.linkTrackEvents=eventVal;
+      s.eVar10=s.prop10=secName;
+    	s.eVar20=s.prop20=srchKeyword;
+      s.linkTrackVars='events,eVar10,prop10,eVar20,prop20';
+    	if(_satellite.getVar('browserDoNotTrack')=="disabled"){
+      s.tl(obj,'o',secName); }
+	    s.linkTrackVars="None"
+	    s.linkTrackEvents="None"
+	 }catch(error){}}
+window.ClickOmniPart=function(obj,eventVal,prefix,secName,partner){  
+  try
+   { s.eVar42=s.prop42='';
+      secName = prefix+secName+":"+s.pageName ;
+     secName=secName.toLowerCase();
+      s.events=eventVal;s.linkTrackEvents=eventVal;
+      s.eVar10=s.prop10=secName;
+      s.eVar15=s.prop15=partner.toLowerCase();
+      s.linkTrackVars='events,eVar10,prop10,prop15,eVar15';
+    	if(_satellite.getVar('browserDoNotTrack')=="disabled"){
+      s.tl(obj,'o',secName); }
+	    s.linkTrackVars="None"
+	    s.linkTrackEvents="None"
+	 }catch(error){}}
+
+window.ClickOmniTrackNav=function(obj,eventVal,prefix,secName){  
+  try
+   {  s.eVar42=s.prop42='';
+     var secN=secName.lastIndexOf('/')+1;
+      secName=secName.substring(secN);
+      secName=secName.toLowerCase();
+      secName=secName.replace(/\//g,':').replace('#','');
+      s.eVar11=s.prop11=secName;
+      secName = prefix+secName+":"+s.pageName;
+      s.events=eventVal;s.linkTrackEvents=eventVal;
+      s.eVar10=s.prop10=secName; 
+      s.linkTrackVars='events,eVar10,prop10,prop11,eVar11';
+    	if(_satellite.getVar('browserDoNotTrack')=="disabled"){
+        console.log('Nav Do not track',_satellite.getVar('browserDoNotTrack'));
+        s.tl(obj,'o',secName); }
+	    s.linkTrackVars="None"
+	    s.linkTrackEvents="None"
+	 }catch(error){}}
+
+
+window.ClickOmniProd=function(obj,eventVal,prefix,secName,pVal){  
+try
+   {   s.eVar42=s.prop42='';
+     var secN=secName.lastIndexOf('/')+1;
+      secName=secName.substring(secN);
+      secName=secName.toLowerCase();
+      secName=secName.replace(/\//g,':').replace('#','');
+      secName = prefix+secName+":"+s.pageName;
+      s.events=eventVal;s.linkTrackEvents=eventVal;
+      s.eVar10=s.prop10=secName; 
+      s.products=";"+pVal;
+      s.linkTrackVars='events,eVar10,prop10,products';
+    	if(_satellite.getVar('browserDoNotTrack')=="disabled"){
+        s.tl(obj,'o',secName); }
+	    s.linkTrackVars="None"
+	    s.linkTrackEvents="None"
+	  }catch(error){}}
+
+window.ClickOmniGFN = function(obj,eventVal,prefix,eventName,jId,platform){
+  try{
+    secName=eventName;
+    s.eVar42=s.prop42='';
+    pagename=_satellite.getVar('pageName')
+    s.pageName=pagename;
+    s.eVar1=window.location.href;
+    s.eVar62=jId;
+      secName = prefix+secName+":"+pagename ;
+     secName=secName.toLowerCase();
+      s.events=eventVal;s.linkTrackEvents=eventVal;
+      s.eVar10=s.prop10=secName;
+    	s.eVar46="D=mid";
+    	s.eVar63=platform;
+      s.linkTrackVars='events,eVar10,prop10,eVar1,eVar62,eVar46,eVar63';
+    if(eventName=='webuiloaded'){
+      console.log('inside event');
+      if(_satellite.getVar('browserDoNotTrack')=="disabled"){
+        s.t();}
+    }else{
+      if(_satellite.getVar('browserDoNotTrack')=="disabled"){
+        s.tl(obj,'o',secName); }
+    }
+	    s.linkTrackVars="None"
+	    s.linkTrackEvents="None"
+    
+  }catch(e){}
+}
+
+  
+});</script><script>
+try {
+    $('.nav-header a.nav-search-link').click(function() {
+        ClickOmniTrack(true, 'event10', 'img:header:', 'search');
+    });
+    $('.brand-container a.brand-link').click(function() {
+        ClickOmniTrack(true, 'event10', 'logo:header:', 'nvidia')
+    });
+    $('.brand-container a.dropdown-arrow').click(function() {
+        ClickOmniTrack(true, 'event10', 'link:header:nav:', 'nvidia-dropdown')
+    });
+    $('.menu-container .global-nav-link').click(function() {
+        var $this = $(this);
+        var getCal = $this.children('img.global-nav-image');
+        if (getCal.length > 0) {
+            ClickOmniTrackNav(true, 'event10,event11', 'img:header:nav:dropdown:' + $this.parents('.xl-8').find('.nav-section-title .body-text').text() + ':', $this.children('.global-nav-title').text());
+        } else {
+            ClickOmniTrackNav(true, 'event10,event11', 'link:header:nav:dropdown:' + $this.parents('.xl-4').find('.nav-section-title .body-text').text() + ':', $this.text());
+        }
+    });
+    $('.nav-tools-container a.nav-profile-link').click(function() {
+        ClickOmniTrack(true, 'event10', 'img:header:nav:', 'my account')
+    });
+    $('.sub-brand-nav a.sub-brand-name #sub-brand-logo').click(function() {
+        var getAttr = $(this).attr('src');
+        var getVal = getAttr.substring(getAttr.lastIndexOf('/') + 1).split('-Logo')[0];
+        ClickOmniTrack(true, 'event10', 'logo:header:', getVal);
+    });
+    if (document.URL.indexOf('www.nvidiaaiconference.com') > -1) {
+        $('.sub-brand-nav a.sub-brand-link,#sub-brand .sub-brand-name').click(function() {
+            var getTxt = $(this).text().trim();
+            ClickOmniTrackNav(true, 'event10,event11', 'link:header:nav:', getTxt)
+        })
+    }
+} catch (e) {}
+</script><script>_satellite["_runScript6"](function(event, target, Promise) {
+try{
+$('#design .cta-preorder.maxq a').click(function(){var getVal=$(this).text();var head=$(this).parent().siblings('h2').text();ClickOmniTrack(this,'event10','button:section:'+head+':',getVal);});}
+catch(e){}
+});</script><script>_satellite["_runScript7"](function(event, target, Promise) {
+try{
+  $('#searchform').submit(function(){  
+  var searchQuery = $(this).find('input[name="q"]').val();
+     //console.log('search submitted', searchQuery);
+    console.log($('.search-results-item.no-results').length);
+  if(searchQuery){
+    _satellite.track('searchEvent',{internalSearchQuery:searchQuery,elementLocation:'header'});
+  }
+  });
+
+
+
+
+
+}catch(e){}
+});</script>
+	
+
+<iframe style="display: none;"></iframe><iframe style="display: none;"></iframe></body></html>

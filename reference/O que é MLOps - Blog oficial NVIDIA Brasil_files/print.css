@@ -1,0 +1,40 @@
+body, .site-header, .single .content-area .entry-meta {
+	background-color: white !important;
+  }
+
+  .single .content-area .inner.for-entry-title {
+	background-image: none !important;
+  }
+
+  .entry-meta-social-links, .nvidia-global-elements,
+  .nvb4-single-post-pagination, .nvb4-similar-stories, .nvb4-email-signup-wrapper,
+  .site-footer, .secondary-menu-slot-wrapper, #masthead, #disqus_thread {
+	display: none !important;
+  }
+
+  a, .for-entry-title, .single .content-area .entry-meta span,
+  .single .content-area .entry-meta span:link,
+  .single .content-area .entry-meta span:visited {
+	color: black !important;
+  }
+
+  .single .content-area .entry-title::before, .single .content-area .entry-title.orientation-landscape::before {
+	padding-top: 150px !important;
+  }
+
+  .single .content-area .entry-title, .single .content-area .entry-title.orientation-landscape {
+	background-image: none !important;
+  }
+
+  .single .content-area .entry-header {
+	margin-bottom: 0px;
+  }
+
+  .single .content-area .entry-footer {
+	border-top: 2px solid black !important;
+  }
+
+  .inner.for-content {
+	width: 8in !important;
+	max-width: 8in !important;
+  }
