@@ -11,6 +11,7 @@ app = FastAPI()
 def get_check_service():
     return {"response": "I am alive!"}
 
+
 @app.get("/predict")
 def get_predict():
     rand_index = torch.randint(low=0, high=int(10000/4), size=(1,))

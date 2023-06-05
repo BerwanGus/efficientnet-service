@@ -16,5 +16,3 @@ if st.button("Generate predictions"):
             img.resize((32, 32))
     else:
         st.write("No images provided.")
-
-
