@@ -86,7 +86,7 @@ class InvertedResidualBlock(nn.Module):
         
         self.conv = nn.Sequential(
             CNNBlock(
-                hidden_dim, hidden_dim, kernel_size,stride, padding, groups=hidden_dim,
+                hidden_dim, hidden_dim, kernel_size, stride, padding, groups=hidden_dim,
             ),
             SqueezeExcitation(hidden_dim, reduced_dim),
             nn.Conv2d(hidden_dim, out_channels, 1, bias=False),
@@ -112,7 +112,8 @@ class InvertedResidualBlock(nn.Module):
 class EfficientNet(nn.Module):
     def __init__(self, version, num_classes) -> None:
         super().__init__()
-        width_factor, depth_factor, dropout_rate = self.calculate_factors(version)
+        self.version = version
+        width_factor, depth_factor, dropout_rate = self.calculate_factors()
         last_channels = ceil(1280 * width_factor)
         self.pool = nn.AdaptiveAvgPool2d(1)
         self.features = self.create_features(width_factor, depth_factor, last_channels)
@@ -121,8 +122,8 @@ class EfficientNet(nn.Module):
             nn.Linear(last_channels, num_classes ),
         )
 
-    def calculate_factors(self, version, alpha=1.2, beta=1.1):
-        phi, res, drop_rate = phi_values[version]
+    def calculate_factors(self, alpha=1.2, beta=1.1):
+        phi, res, drop_rate = phi_values[self.version]
         depth_factor = alpha ** phi
         width_factor = beta ** phi
         return width_factor, depth_factor, drop_rate

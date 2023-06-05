@@ -119,7 +119,7 @@ def train_model(model, epochs):
                valid {:.6f}'.format(avg_loss, avg_vloss))
         if avg_vloss < best_vloss:
             best_vloss = avg_vloss
-            model_path = 'model_{}_{}'.format(timestamp, epoch)
+            model_path = 'enet_{}_{}_{}'.format(model.version, timestamp, epoch)
             torch.save(model.state_dict(), model_path)
 
 if __name__ == '__main__':

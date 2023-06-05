@@ -1,5 +1,7 @@
+version: '3.8'
+
 services:
-  api:
+  enet_api:
     build:
       context: ./01_api/
     restart: always
@@ -9,3 +11,9 @@ services:
       - ./01_api/.env
     volumes:
       - ./01_api/app/data:/app/data
+  streamlit:
+    build:
+      context: ./02_stresmlit/
+    restart: always
+    ports:
+      - "8001: 8001"
