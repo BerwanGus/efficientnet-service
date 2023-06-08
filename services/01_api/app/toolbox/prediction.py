@@ -1,11 +1,13 @@
 import os
 import torch
 from toolbox.efficientnet_model import EfficientNet
-from toolbox.train_model import load_dummy_data
+from toolbox.train_model import DeviceDataLoader
 
 
-def load_unet(version, path):
-    device = "cuda:0" if torch.cuda.is_available() else "cpu"
+device = "cuda:0" if torch.cuda.is_available() else "cpu"
+
+
+def load_enet(version, path):
     num_classes = 10
 
     model = EfficientNet(version, num_classes).to(device)
@@ -23,29 +25,27 @@ def decode_classes(preds, classes):
         return classes[int(preds)]
 
 
-def predict(batch_index):
-    # model = load_unet(os.getenv('UNET_VERSION'), os.getenv('MODEL_PATH'))
-    model = load_unet(os.getenv("UNET_VERSION"), os.getenv("MODEL_PATH"))
+def predict(inference_dataloader):
+    model = load_enet(os.getenv("ENET_VERSION"), os.getenv("MODEL_PATH"))
     model.training = False
-    
-    training_loader, validation_loader, classes = load_dummy_data()
 
-    batch = validation_loader[batch_index]
-    inputs, labels = batch
-    logits = model(inputs)
-    probs = torch.nn.Softmax(1)(logits)
-    preds = torch.argmax(probs, dim=1)
+    classes = inference_dataloader.classes
+    inference_dataloader = DeviceDataLoader(inference_dataloader, device)
+
+    for i, inputs in enumerate(inference_dataloader):
+        logits = model(inputs)
+        probs = torch.nn.Softmax(1)(logits)
+        preds = torch.argmax(probs, dim=1)
     
     decoded_preds = decode_classes(preds, classes)
-    decoded_labels = decode_classes(labels, classes)
 
-    return (probs, decoded_preds, decoded_labels)
+    return (probs, decoded_preds)
         
 
 if __name__=='__main__':
     if os.getenv("DATA_PATH") is None:
         os.environ["DATA_PATH"] = '../data'
         os.environ["MODEL_PATH"] = "../models/model_20230529_050355_4"
-        os.environ["UNET_VERSION"] = 'b0'
+        os.environ["ENET_VERSION"] = 'b0'
     predict()
 

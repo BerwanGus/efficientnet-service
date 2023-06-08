@@ -1,4 +1,4 @@
-import os
+import requests
 import streamlit as st
 import numpy as np
 from PIL import Image
@@ -14,5 +14,6 @@ if st.button("Generate predictions"):
         for file in uploaded_files:
             img = Image.open(file)
             img.resize((32, 32))
+            
     else:
         st.write("No images provided.")
