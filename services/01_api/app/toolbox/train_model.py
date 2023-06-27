@@ -124,7 +124,7 @@ def train_model(model, epochs):
 
 if __name__ == '__main__':
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
-    version = os.getenv('UNET_VERSION')
+    version = os.getenv('ENET_VERSION')
     num_classes = 10
     model = EfficientNet(version, num_classes).to(device)
     train_model(model, epochs=5)
