@@ -9,8 +9,8 @@ uploaded_files = st.file_uploader("Choose a file", type=['jpeg', 'png'], accept_
 
 if st.button("Generate predictions"):
     if len(uploaded_files) > 0:
-        files = {file.name:file.read() for file in uploaded_files}
+        files = [("files", file) for file in uploaded_files]
         response = requests.get(os.getenv('API_URL') + '/predict', files=files)
-        st.write(response.status_code, response.json())
+        st.write(response.json()['predictions'])
     else:
         st.write("No images provided.")

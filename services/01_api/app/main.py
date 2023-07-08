@@ -1,6 +1,8 @@
 import torch
 import os
+import numpy as np
 from torch.utils.data import Dataset
+from PIL import Image
 from torchvision import transforms
 from fastapi import FastAPI, UploadFile
 from fastapi.responses import JSONResponse
@@ -14,9 +16,10 @@ app = FastAPI()
 
 class InferenceDataLoader(Dataset):
     def __init__(self, files: List[UploadFile]):
-        self.images = [filename.file.read() for filename in files]
+        self.files = files
         self.resolution = phi_values[os.getenv('ENET_VERSION')][1] # get res from phi_values
-        self.transform = transforms.Resize(self.resolution)
+        self.transforms = transforms.Compose([transforms.Resize((self.resolution, self.resolution)),
+                                              transforms.ToTensor()]) 
         self.classes =  ('plane', 'car', 'bird', 'cat', 'deer',
                          'dog', 'frog', 'horse', 'ship', 'truck')
 
@@ -24,9 +27,8 @@ class InferenceDataLoader(Dataset):
         return len(self.images)
     
     def __getitem__(self, idx):
-        image_bytes = self.images[idx]
-        tensor = torch.frombuffer(image_bytes, dtype=torch.int)
-        return self.transform(tensor)
+        img = Image.open(self.files[idx].file)
+        return self.transforms(img)[None, :, :, :] # convert single to batch
 
 
 @app.get("/healthcheck")
@@ -37,12 +39,11 @@ def get_check_service():
 @app.get("/predict")
 def get_predict(files: List[UploadFile]):
     dataloader = InferenceDataLoader(files)
-    probs, decoded_preds, decoded_labels = predict(dataloader)
-
+    probs, decoded_preds = predict(dataloader)
     results = {}
-    for i, (prob, dpred, dlabel) in enumerate(zip(probs, decoded_preds, decoded_labels)):
+    for i, (prob, dpred) in enumerate(zip(probs, decoded_preds)):
         id = f"image{i}"
-        results[id] = (dpred, float(torch.max(prob)*100), dlabel)
-        print("\tpredicted: {} ({:.2f}%); true: {}".format(*results[id]))
+        results[id] = (dpred, float(torch.max(prob)*100))
+        print("\tpredicted: {} ({:.2f}%)".format(*results[id]))
     
     return JSONResponse({"predictions": results}, 200)

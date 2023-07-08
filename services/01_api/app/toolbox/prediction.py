@@ -32,7 +32,7 @@ def predict(inference_dataloader):
     classes = inference_dataloader.classes
     inference_dataloader = DeviceDataLoader(inference_dataloader, device)
 
-    for i, inputs in enumerate(inference_dataloader):
+    for _, inputs in enumerate(inference_dataloader):
         logits = model(inputs)
         probs = torch.nn.Softmax(1)(logits)
         preds = torch.argmax(probs, dim=1)
